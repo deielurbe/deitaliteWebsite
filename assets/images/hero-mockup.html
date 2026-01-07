@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>deitalite Email Mockup</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: transparent;
+      padding: 20px;
+    }
+    .email-card {
+      max-width: 480px;
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    .header {
+      background: linear-gradient(135deg, #3e573c 0%, #4a6848 100%);
+      padding: 20px 24px;
+      text-align: center;
+    }
+    .header h1 {
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .header .date {
+      color: rgba(255,255,255,0.85);
+      font-size: 13px;
+    }
+
+    /* 3-Day Forecast */
+    .forecast-section {
+      padding: 20px 16px;
+      border-bottom: 1px solid #eee;
+    }
+    .forecast-hint {
+      font-size: 10px;
+      color: #94a3b8;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .forecast-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .forecast-today {
+      background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .forecast-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #166534;
+      opacity: 0.7;
+      margin-bottom: 6px;
+    }
+    .forecast-status {
+      font-size: 18px;
+      font-weight: 700;
+      color: #166534;
+      margin-bottom: 2px;
+    }
+    .forecast-amount {
+      font-size: 14px;
+      color: #166534;
+      margin-bottom: 2px;
+    }
+    .forecast-pct {
+      font-size: 11px;
+      color: #166534;
+      opacity: 0.7;
+      margin-bottom: 10px;
+    }
+    .weather-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #166534;
+    }
+    .weather-icon {
+      font-size: 18px;
+    }
+    .rain-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      background: rgba(255,255,255,0.6);
+      color: #166534;
+      font-size: 10px;
+      border-radius: 10px;
+      margin-left: 6px;
+    }
+    .event-row {
+      margin-top: 8px;
+      font-size: 11px;
+      color: #166534;
+      opacity: 0.9;
+    }
+
+    .forecast-secondary {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .forecast-small {
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 12px;
+    }
+    .forecast-small .forecast-label {
+      color: #64748b;
+      font-size: 10px;
+      margin-bottom: 4px;
+    }
+    .forecast-small .forecast-status {
+      font-size: 14px;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 2px;
+    }
+    .forecast-small .forecast-pct {
+      font-size: 11px;
+      color: #64748b;
+    }
+    .forecast-small .weather-row {
+      color: #64748b;
+      font-size: 11px;
+      margin-top: 6px;
+    }
+    .forecast-small .weather-icon {
+      font-size: 16px;
+    }
+    .forecast-small .rain-badge {
+      background: #e2e8f0;
+      color: #64748b;
+    }
+
+    /* Prep Section */
+    .prep-section {
+      padding: 20px 16px;
+      border-bottom: 1px solid #eee;
+    }
+    .section-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #888;
+      margin-bottom: 4px;
+    }
+    .section-hint {
+      font-size: 10px;
+      color: #94a3b8;
+      margin-bottom: 14px;
+    }
+    .color-swatch {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      vertical-align: middle;
+    }
+
+    .prep-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .prep-category {
+      padding: 8px 0 6px 0;
+      border-bottom: 2px solid #e2e8f0;
+      font-size: 12px;
+      font-weight: 600;
+      color: #475569;
+    }
+    .prep-header {
+      background: #f8fafc;
+    }
+    .prep-header td {
+      padding: 6px 4px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #94a3b8;
+      text-align: center;
+    }
+    .prep-header td:first-child {
+      text-align: left;
+      padding-left: 0;
+    }
+    .prep-header td.today-col {
+      color: #64748b;
+      font-weight: 600;
+    }
+    .prep-row td {
+      padding: 4px;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 13px;
+    }
+    .prep-row td:first-child {
+      color: #334155;
+      padding-left: 0;
+    }
+    .prep-row td:not(:first-child) {
+      text-align: center;
+      white-space: nowrap;
+    }
+    .cell-wrap {
+      border-radius: 6px;
+      padding: 6px 4px;
+    }
+    .cell-up {
+      background-color: #dcfce7;
+    }
+    .cell-down {
+      background-color: #fee2e2;
+    }
+    .qty-today {
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .qty-today-up {
+      color: #166534;
+    }
+    .qty-today-down {
+      color: #991b1b;
+    }
+    .qty-today-normal {
+      color: #1e293b;
+    }
+    .qty-range {
+      font-size: 10px;
+      opacity: 0.7;
+    }
+    .qty-other {
+      font-weight: 500;
+      font-size: 13px;
+    }
+    .qty-other-up {
+      color: #166534;
+    }
+    .qty-other-down {
+      color: #991b1b;
+    }
+    .qty-other-normal {
+      color: #64748b;
+    }
+    .qty-range-light {
+      font-size: 9px;
+      opacity: 0.6;
+    }
+
+    /* Week Outlook */
+    .week-section {
+      padding: 20px 16px;
+      border-bottom: 1px solid #eee;
+    }
+    .week-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      text-align: center;
+    }
+    .week-day {
+      padding: 8px 4px;
+    }
+    .week-day-name {
+      font-size: 11px;
+      color: #888;
+      margin-bottom: 4px;
+    }
+    .week-weather {
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+    .week-temp {
+      font-size: 9px;
+      color: #666;
+      margin-bottom: 2px;
+    }
+    .week-rain {
+      display: inline-block;
+      padding: 1px 5px;
+      font-size: 7px;
+      border-radius: 6px;
+      margin-bottom: 4px;
+    }
+    .week-pct {
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .week-pct.up { color: #22c55e; }
+    .week-pct.down { color: #ef4444; }
+    .week-pct.normal { color: #64748b; }
+    .week-event {
+      font-size: 9px;
+      margin-top: 2px;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 16px;
+      text-align: center;
+      background: #fafafa;
+    }
+    .footer p {
+      font-size: 12px;
+      color: #999;
+    }
+    .footer a {
+      color: #3e573c;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-card">
+
+    <!-- Header -->
+    <div class="header">
+      <h1>Bar Puerto</h1>
+      <div class="date">Friday, May 1, 2026</div>
+    </div>
+
+    <!-- 3-Day Forecast -->
+    <div class="forecast-section">
+      <div class="forecast-hint">Percentages compare to last 6 weeks</div>
+      <div class="forecast-grid">
+
+        <!-- Today -->
+        <div class="forecast-today">
+          <div class="forecast-label">Today</div>
+          <div class="forecast-status">Busier</div>
+          <div class="forecast-amount">~55 ± 10 transactions</div>
+          <div class="forecast-pct">Above average (+32%)</div>
+          <div class="weather-row">
+            <span class="weather-icon">☀️</span>
+            <span>22-28°C</span>
+            <span class="rain-badge">No rain</span>
+          </div>
+          <div class="event-row">
+            🚢 4,500 cruise passengers
+          </div>
+          <div class="event-row">
+            🎉 International Workers Day
+          </div>
+        </div>
+
+        <!-- Tomorrow + Day After -->
+        <div class="forecast-secondary">
+          <div class="forecast-small">
+            <div class="forecast-label">Sat</div>
+            <div class="forecast-status">Normal</div>
+            <div class="forecast-pct">~47 ± 9 (+8%)</div>
+            <div class="weather-row">
+              <span class="weather-icon">☀️</span>
+              <span>23-29°C</span>
+              <span class="rain-badge">No rain</span>
+            </div>
+          </div>
+          <div class="forecast-small">
+            <div class="forecast-label">Sun</div>
+            <div class="forecast-status">Normal</div>
+            <div class="forecast-pct">~39 ± 8 (-5%)</div>
+            <div class="weather-row">
+              <span class="weather-icon">⛅</span>
+              <span>21-27°C</span>
+              <span class="rain-badge">No rain</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3-Day Prep -->
+    <div class="prep-section">
+      <div class="section-title">3-Day Prep</div>
+      <div class="section-hint">
+        <span class="color-swatch" style="background:#dcfce7;"></span>/<span class="color-swatch" style="background:#fee2e2;"></span> more/less than usual for that day of the week
+      </div>
+
+      <table class="prep-table">
+        <!-- Starters -->
+        <tr><td colspan="4" class="prep-category">Starters</td></tr>
+        <tr class="prep-header">
+          <td></td>
+          <td class="today-col">Fri</td>
+          <td>Sat</td>
+          <td>Sun</td>
+        </tr>
+        <tr class="prep-row">
+          <td>Ceviche</td>
+          <td>
+            <div class="cell-wrap cell-up">
+              <span class="qty-today qty-today-up">14</span><span class="qty-range qty-today-up"> ±2</span>
+            </div>
+          </td>
+          <td>
+            <div class="cell-wrap">
+              <span class="qty-other qty-other-normal">10</span><span class="qty-range-light"> ±2</span>
+            </div>
+          </td>
+          <td>
+            <div class="cell-wrap">
+              <span class="qty-other qty-other-normal">8</span><span class="qty-range-light"> ±2</span>
+            </div>
+          </td>
+        </tr>
+        <tr class="prep-row">
+          <td>Caesar Salad</td>
+          <td>
+            <div class="cell-wrap">
+              <span class="qty-today qty-today-normal">10</span><span class="qty-range"> ±2</span>
+            </div>
+          </td>
+          <td>
+            <div class="cell-wrap cell-up">
+              <span class="qty-other qty-other-up">9</span><span class="qty-range-light"> ±2</span>
+            </div>
+          </td>
+          <td>
+            <div class="cell-wrap">
+              <span class="qty-other qty-other-normal">6</span><span class="qty-range-light"> ±2</span>
+            </div>
+          </td>
+        </tr>
+        <tr class="prep-row">
+          <td>Miso Soup</td>
+          <td>
+            <div class="cell-wrap cell-down">
+              <span class="qty-today qty-today-down">5</span><span class="qty-range qty-today-down"> ±2</span>
+            </div>
+          </td>
+          <td>
+            <div class="cell-wrap">
+              <span class="qty-other qty-other-normal">5</span><span class="qty-range-light"> ±2</span>
+            </div>
+          </td>
+          <td>
+            <div class="cell-wrap">
+              <span class="qty-other qty-other-normal">4</span><span class="qty-range-light"> ±1</span>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Mains -->
+        <tr><td colspan="4" class="prep-category" style="padding-top:14px;">Mains</td></tr>
+        <tr class="prep-header">
+          <td></td>
+          <td class="today-col">Fri</td>
+          <td>Sat</td>
+          <td>Sun</td>
+        </tr>
+        <tr class="prep-row">
+          <td>Poke Bowl</td>
+          <td>
+            <div class="cell-wrap cell-up">
+              <span class="qty-today qty-today-up">20</span><span class="qty-range qty-today-up"> ±3</span>
+            </div>
+          </td>
+          <td>
+            <div class="cell-wrap cell-up">
+              <span class="qty-other qty-other-up">16</span><span class="qty-range-light"> ±3</span>
+            </div>
+          </td>
+          <td>
+            <div class="cell-wrap">
+              <span class="qty-other qty-other-normal">12</span><span class="qty-range-light"> ±2</span>
+            </div>
+          </td>
+        </tr>
+        <tr class="prep-row">
+          <td>Classic Burger</td>
+          <td>
+            <div class="cell-wrap">
+              <span class="qty-today qty-today-normal">18</span><span class="qty-range"> ±3</span>
+            </div>
+          </td>
+          <td>
+            <div class="cell-wrap">
+              <span class="qty-other qty-other-normal">13</span><span class="qty-range-light"> ±2</span>
+            </div>
+          </td>
+          <td>
+            <div class="cell-wrap cell-down">
+              <span class="qty-other qty-other-down">9</span><span class="qty-range-light"> ±2</span>
+            </div>
+          </td>
+        </tr>
+        <tr class="prep-row">
+          <td>Fish and Chips</td>
+          <td>
+            <div class="cell-wrap">
+              <span class="qty-today qty-today-normal">14</span><span class="qty-range"> ±2</span>
+            </div>
+          </td>
+          <td>
+            <div class="cell-wrap cell-down">
+              <span class="qty-other qty-other-down">8</span><span class="qty-range-light"> ±2</span>
+            </div>
+          </td>
+          <td>
+            <div class="cell-wrap">
+              <span class="qty-other qty-other-normal">10</span><span class="qty-range-light"> ±2</span>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Desserts -->
+        <tr><td colspan="4" class="prep-category" style="padding-top:14px;">Desserts</td></tr>
+        <tr class="prep-header">
+          <td></td>
+          <td class="today-col">Fri</td>
+          <td>Sat</td>
+          <td>Sun</td>
+        </tr>
+        <tr class="prep-row">
+          <td>Chocolate Brownie</td>
+          <td>
+            <div class="cell-wrap cell-up">
+              <span class="qty-today qty-today-up">11</span><span class="qty-range qty-today-up"> ±2</span>
+            </div>
+          </td>
+          <td>
+            <div class="cell-wrap">
+              <span class="qty-other qty-other-normal">8</span><span class="qty-range-light"> ±2</span>
+            </div>
+          </td>
+          <td>
+            <div class="cell-wrap cell-up">
+              <span class="qty-other qty-other-up">7</span><span class="qty-range-light"> ±2</span>
+            </div>
+          </td>
+        </tr>
+        <tr class="prep-row">
+          <td>Cheesecake</td>
+          <td>
+            <div class="cell-wrap">
+              <span class="qty-today qty-today-normal">8</span><span class="qty-range"> ±2</span>
+            </div>
+          </td>
+          <td>
+            <div class="cell-wrap">
+              <span class="qty-other qty-other-normal">6</span><span class="qty-range-light"> ±2</span>
+            </div>
+          </td>
+          <td>
+            <div class="cell-wrap cell-down">
+              <span class="qty-other qty-other-down">4</span><span class="qty-range-light"> ±1</span>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Week Outlook -->
+    <div class="week-section">
+      <div class="section-title">Later This Week</div>
+      <div class="week-grid">
+        <div class="week-day">
+          <div class="week-day-name">Mon</div>
+          <div class="week-weather">⛅</div>
+          <div class="week-temp">20-25°</div>
+          <div class="week-rain" style="background:#dcfce7;color:#166534;">No rain</div>
+          <div class="week-pct normal">-8%</div>
+        </div>
+        <div class="week-day">
+          <div class="week-day-name">Tue</div>
+          <div class="week-weather">☀️</div>
+          <div class="week-temp">21-27°</div>
+          <div class="week-rain" style="background:#dcfce7;color:#166534;">No rain</div>
+          <div class="week-pct up">+25%</div>
+          <div class="week-event">🚢</div>
+        </div>
+        <div class="week-day">
+          <div class="week-day-name">Wed</div>
+          <div class="week-weather">🌧️</div>
+          <div class="week-temp">17-22°</div>
+          <div class="week-rain" style="background:#fee2e2;color:#991b1b;">Rain</div>
+          <div class="week-pct down">-25%</div>
+        </div>
+        <div class="week-day">
+          <div class="week-day-name">Thu</div>
+          <div class="week-weather">⛅</div>
+          <div class="week-temp">19-24°</div>
+          <div class="week-rain" style="background:#fef3c7;color:#92400e;">Showers</div>
+          <div class="week-pct down">-15%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>Full forecast attached as Excel &nbsp;·&nbsp; Powered by <a href="#">deitalite</a></p>
+    </div>
+
+  </div>
+</body>
+</html>

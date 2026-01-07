@@ -525,14 +525,19 @@ section:nth-child(even) {
 
 #hero .container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
   gap: var(--spacing-2xl);
 }
 
 .hero-content {
-  width: 100%;
-  max-width: 640px;
+  flex: 1;
+  max-width: 540px;
+}
+
+.hero-visual {
+  flex: 0 0 auto;
+  width: 420px;
 }
 
 .hero-content h1 {
@@ -589,6 +594,385 @@ section:nth-child(even) {
   box-shadow: var(--shadow-card);
   width: 100%;
   max-width: 900px;
+}
+
+/* Email Mockup Component */
+.email-mockup {
+  max-width: 420px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Center mockup in proof section, not in hero */
+#proof .email-mockup {
+  margin: 0 auto;
+}
+
+/* Compact mockup for hero - with fade effect */
+.email-mockup-compact {
+  position: relative;
+}
+
+.email-mockup-compact .email-card {
+  border-radius: 16px 16px 0 0;
+}
+
+.email-mockup-compact .em-fade-section {
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 100%);
+}
+
+.em-fade-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent 0%, var(--color-off-white) 100%);
+  pointer-events: none;
+}
+
+.email-mockup .email-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.email-mockup .em-header {
+  background: linear-gradient(135deg, #3e573c 0%, #4a6848 100%);
+  padding: 16px 20px;
+  text-align: center;
+}
+
+.email-mockup .em-header h2 {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.email-mockup .em-header .em-date {
+  color: rgba(255,255,255,0.85);
+  font-size: 12px;
+}
+
+/* Forecast Section */
+.email-mockup .em-forecast {
+  padding: 16px 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.email-mockup .em-forecast-hint {
+  font-size: 9px;
+  color: #94a3b8;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.email-mockup .em-forecast-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.email-mockup .em-today {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.email-mockup .em-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #166534;
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+.email-mockup .em-status {
+  font-size: 16px;
+  font-weight: 700;
+  color: #166534;
+  margin-bottom: 2px;
+}
+
+.email-mockup .em-amount {
+  font-size: 12px;
+  color: #166534;
+  margin-bottom: 2px;
+}
+
+.email-mockup .em-pct {
+  font-size: 10px;
+  color: #166534;
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+
+.email-mockup .em-weather {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #166534;
+}
+
+.email-mockup .em-weather-icon {
+  font-size: 16px;
+}
+
+.email-mockup .em-rain-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  background: rgba(255,255,255,0.6);
+  color: #166534;
+  font-size: 9px;
+  border-radius: 8px;
+  margin-left: 4px;
+}
+
+.email-mockup .em-event {
+  margin-top: 6px;
+  font-size: 10px;
+  color: #166534;
+  opacity: 0.9;
+}
+
+.email-mockup .em-secondary {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.email-mockup .em-small {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.email-mockup .em-small .em-label {
+  color: #64748b;
+  font-size: 9px;
+  margin-bottom: 3px;
+}
+
+.email-mockup .em-small .em-status {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 2px;
+}
+
+.email-mockup .em-small .em-pct {
+  font-size: 10px;
+  color: #64748b;
+}
+
+.email-mockup .em-small .em-weather {
+  color: #64748b;
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.email-mockup .em-small .em-rain-badge {
+  background: #e2e8f0;
+  color: #64748b;
+}
+
+/* Prep Section */
+.email-mockup .em-prep {
+  padding: 16px 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.email-mockup .em-section-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #888;
+  margin-bottom: 3px;
+}
+
+.email-mockup .em-section-hint {
+  font-size: 9px;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.email-mockup .em-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+.email-mockup .em-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.email-mockup .em-cat {
+  padding: 6px 0 5px 0;
+  border-bottom: 2px solid #e2e8f0;
+  font-size: 11px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.email-mockup .em-thead {
+  background: #f8fafc;
+}
+
+.email-mockup .em-thead td {
+  padding: 5px 3px;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.email-mockup .em-thead td:first-child {
+  text-align: left;
+  padding-left: 0;
+}
+
+.email-mockup .em-thead .em-today-col {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.email-mockup .em-row td {
+  padding: 3px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 11px;
+}
+
+.email-mockup .em-row td:first-child {
+  color: #334155;
+  padding-left: 0;
+}
+
+.email-mockup .em-row td:not(:first-child) {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.email-mockup .em-cell {
+  border-radius: 5px;
+  padding: 5px 3px;
+}
+
+.email-mockup .em-cell-up {
+  background-color: #dcfce7;
+}
+
+.email-mockup .em-cell-down {
+  background-color: #fee2e2;
+}
+
+.email-mockup .em-qty {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.email-mockup .em-qty-up { color: #166534; }
+.email-mockup .em-qty-down { color: #991b1b; }
+.email-mockup .em-qty-normal { color: #1e293b; }
+
+.email-mockup .em-range {
+  font-size: 9px;
+  opacity: 0.7;
+}
+
+.email-mockup .em-qty-other {
+  font-weight: 500;
+  font-size: 11px;
+}
+
+.email-mockup .em-qty-other-up { color: #166534; }
+.email-mockup .em-qty-other-down { color: #991b1b; }
+.email-mockup .em-qty-other-normal { color: #64748b; }
+
+.email-mockup .em-range-light {
+  font-size: 8px;
+  opacity: 0.6;
+}
+
+/* Week Section */
+.email-mockup .em-week {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.email-mockup .em-week-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  text-align: center;
+}
+
+.email-mockup .em-week-day {
+  padding: 6px 3px;
+}
+
+.email-mockup .em-day-name {
+  font-size: 10px;
+  color: #888;
+  margin-bottom: 3px;
+}
+
+.email-mockup .em-day-weather {
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.email-mockup .em-day-temp {
+  font-size: 8px;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+.email-mockup .em-day-rain {
+  display: inline-block;
+  padding: 1px 4px;
+  font-size: 7px;
+  border-radius: 5px;
+  margin-bottom: 3px;
+}
+
+.email-mockup .em-day-pct {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.email-mockup .em-day-pct.up { color: #22c55e; }
+.email-mockup .em-day-pct.down { color: #ef4444; }
+.email-mockup .em-day-pct.normal { color: #64748b; }
+
+.email-mockup .em-day-event {
+  font-size: 8px;
+  margin-top: 2px;
+}
+
+/* Footer */
+.email-mockup .em-footer {
+  padding: 12px;
+  text-align: center;
+  background: #fafafa;
+}
+
+.email-mockup .em-footer p {
+  font-size: 10px;
+  color: #999;
+  margin: 0;
+}
+
+.email-mockup .em-footer a {
+  color: #3e573c;
+  text-decoration: none;
 }
 
 /* 8. Problem Section */
@@ -1076,7 +1460,39 @@ section:nth-child(even) {
   transform: translateY(0);
 }
 
-/* 17. Mobile Responsive */
+/* 17. Tablet - Hero stacks earlier */
+@media (max-width: 960px) {
+  #hero .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-content {
+    max-width: 640px;
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .hero-benefits {
+    text-align: left;
+    display: inline-block;
+  }
+
+  .hero-visual {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .hero-cta-buttons {
+    justify-content: center;
+  }
+
+  .hero-trust-signal {
+    text-align: center;
+  }
+}
+
+/* 18. Mobile Responsive */
 @media (max-width: 768px) {
   /* Typography adjustments */
   :root {
@@ -1092,14 +1508,15 @@ section:nth-child(even) {
     padding: 0 var(--spacing-sm);
   }
 
-  /* Hero: stack columns */
-  #hero .container {
-    grid-template-columns: 1fr;
+  /* Hero: mobile adjustments (stacking handled by tablet breakpoint) */
+  .hero-content {
+    max-width: 100%;
   }
 
   .hero-cta-buttons {
     flex-direction: column;
     gap: var(--spacing-sm);
+    align-items: center;
   }
 
   /* Steps: stack */
@@ -1146,6 +1563,56 @@ section:nth-child(even) {
   /* Stat numbers */
   .stat-number-inline {
     font-size: 36px;
+  }
+
+  /* Email mockup mobile */
+  .email-mockup {
+    max-width: 100%;
+  }
+
+  .email-mockup .em-forecast-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .email-mockup .em-today {
+    padding: 12px;
+  }
+
+  .email-mockup .em-secondary {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .email-mockup .em-small {
+    flex: 1;
+  }
+
+  .email-mockup .em-week-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+
+  .email-mockup .em-day-weather {
+    font-size: 12px;
+  }
+
+  .email-mockup .em-day-temp {
+    font-size: 7px;
+  }
+
+  .email-mockup .em-day-rain {
+    font-size: 6px;
+    padding: 1px 3px;
+  }
+
+  .email-mockup .em-day-pct {
+    font-size: 10px;
+  }
+
+  /* Proof section callouts mobile */
+  .proof-callouts {
+    grid-template-columns: 1fr !important;
   }
 }
 
