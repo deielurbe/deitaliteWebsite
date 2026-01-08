@@ -111,11 +111,12 @@
 
       <!-- Application Form -->
       <div style="margin-top: var(--spacing-xl); padding: var(--spacing-lg); background-color: var(--color-off-white); border-radius: var(--radius-md);">
-        <form action="https://formspree.io/f/[PILOT_FORM_ID]" method="POST" class="pilot-form" style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+        <form action="https://formspree.io/f/mjgknlql" method="POST" class="pilot-form" style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+          <input type="text" name="name" placeholder="Your name" required style="padding: 14px 18px; border: 2px solid var(--color-gray-light); border-radius: var(--radius-md); font-size: var(--font-size-body); font-family: var(--font-family);">
           <input type="text" name="restaurant" placeholder="Restaurant name" required style="padding: 14px 18px; border: 2px solid var(--color-gray-light); border-radius: var(--radius-md); font-size: var(--font-size-body); font-family: var(--font-family);">
           <input type="text" name="city" placeholder="City" required style="padding: 14px 18px; border: 2px solid var(--color-gray-light); border-radius: var(--radius-md); font-size: var(--font-size-body); font-family: var(--font-family);">
           <input type="email" name="email" placeholder="Your email" required style="padding: 14px 18px; border: 2px solid var(--color-gray-light); border-radius: var(--radius-md); font-size: var(--font-size-body); font-family: var(--font-family);">
-          <textarea name="about" placeholder="Tell us briefly about your restaurant and how weather affects your business (optional)" rows="4" style="padding: 14px 18px; border: 2px solid var(--color-gray-light); border-radius: var(--radius-md); font-size: var(--font-size-body); font-family: var(--font-family); resize: vertical;"></textarea>
+          <textarea name="about" placeholder="Tell us briefly about your restaurant and how weather and/or events affect your business (optional)" rows="4" style="padding: 14px 18px; border: 2px solid var(--color-gray-light); border-radius: var(--radius-md); font-size: var(--font-size-body); font-family: var(--font-family); resize: vertical;"></textarea>
           <button type="submit" class="btn-primary btn-large" data-i18n="start.cta.button">Apply for the pilot</button>
         </form>
       </div>
