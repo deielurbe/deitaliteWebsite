@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>deitalite + Lightspeed | Slimme verkoopvoorspellingen</title>
-  <meta name="description" content="deitalite wil een officiële integratie bouwen voor Lightspeed Restaurant-klanten. Dagelijkse verkoopvoorspellingen per gerecht, aangepast aan weer en evenementen.">
+  <title>deitalite + MplusKASSA | Smart Sales Forecasting</title>
+  <meta name="description" content="deitalite wants to build an official integration for MplusKASSA Q-line customers. Daily sales forecasts per dish, adjusted for weather and events.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="deitalite + Lightspeed | Slimme verkoopvoorspellingen">
-  <meta property="og:description" content="Dagelijkse verkoopvoorspellingen voor Lightspeed Restaurant-klanten. Read-only integratie via OAuth 2.0.">
-  <meta property="og:url" content="https://deitalite.com/partners/lightspeed">
+  <meta property="og:title" content="deitalite + MplusKASSA | Smart Sales Forecasting">
+  <meta property="og:description" content="Daily sales forecasts for MplusKASSA Q-line customers. Read-only integration via API.">
+  <meta property="og:url" content="https://deitalite.com/partners/mpluskassa">
   <meta property="og:type" content="website">
 
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://deitalite.com/partners/lightspeed">
+  <link rel="canonical" href="https://deitalite.com/partners/mpluskassa">
 
   <!-- Favicon -->
   <link rel="icon" href="../../assets/images/favicon.ico">
@@ -54,7 +54,7 @@
       color: var(--color-brand-green);
     }
 
-    .partner-logo.lightspeed img {
+    .partner-logo.mpluskassa img {
       height: 36px;
       width: auto;
     }
@@ -159,7 +159,7 @@
     }
 
     .security-list li::before {
-      content: "✓";
+      content: "\2713";
       position: absolute;
       left: 0;
       color: var(--color-success);
@@ -220,50 +220,6 @@
       text-decoration: underline;
     }
 
-    /* Contact section */
-    .contact-section {
-      background-color: var(--color-brand-green);
-      color: #ffffff !important;
-      text-align: center;
-      padding: var(--spacing-2xl) 0;
-    }
-
-    .contact-section h2 {
-      color: #ffffff !important;
-      text-align: center;
-    }
-
-    .contact-section p {
-      color: #ffffff !important;
-    }
-
-    .contact-details {
-      display: flex;
-      justify-content: center;
-      gap: var(--spacing-xl);
-      flex-wrap: wrap;
-      margin-top: var(--spacing-lg);
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-sm);
-      color: #ffffff !important;
-      font-size: var(--font-size-body);
-      font-weight: 500;
-    }
-
-    .contact-item a {
-      color: #ffffff !important;
-      text-decoration: underline;
-      font-weight: 600;
-    }
-
-    .contact-icon {
-      font-size: 20px;
-    }
-
     /* Simple header for partner pages */
     .partner-header {
       background-color: var(--color-white);
@@ -314,11 +270,6 @@
         transform: rotate(90deg);
       }
 
-      .contact-details {
-        flex-direction: column;
-        gap: var(--spacing-md);
-      }
-
       .data-table {
         font-size: var(--font-size-small);
       }
@@ -345,29 +296,29 @@
       <div class="partner-logos">
         <span class="partner-logo deitalite">deitalite</span>
         <span class="partner-plus">+</span>
-        <span class="partner-logo lightspeed">
-          <img src="lightspeed-logo.svg" alt="Lightspeed" />
+        <span class="partner-logo mpluskassa">
+          <img src="mpluskassa-logo.svg" alt="MplusKASSA" />
         </span>
       </div>
-      <h1>Slimme verkoopvoorspellingen voor Lightspeed Restaurant-klanten</h1>
-      <p class="hero-subheadline">Wij helpen horecaondernemers beter voorbereiden op drukke en rustige dagen, op basis van hun eigen verkoopdata, weer en evenementen.</p>
+      <h1>Smart sales forecasting for MplusKASSA customers</h1>
+      <p class="hero-subheadline">We help hospitality businesses prepare for busy and quiet days — based on their own sales data, weather, and local events.</p>
     </div>
   </section>
 
   <!-- Section 1: What we want to build -->
   <section class="partner-section">
     <div class="container-narrow" style="text-align: left;">
-      <h2>Wat we willen bouwen met Lightspeed</h2>
-      <p>Een officiële integratie waarmee Lightspeed Restaurant-klanten met één klik hun verkoopdata kunnen delen. Geen exports, geen handmatig werk. Alleen een simpele OAuth-autorisatie.</p>
-      <p>Na autorisatie ontvangen ze elke ochtend een verkoopvoorspelling per gerecht, aangepast aan het weer en lokale evenementen.</p>
+      <h2>What we want to build with MplusKASSA</h2>
+      <p>An integration that allows MplusKASSA Q-line customers to easily share their sales data with deitalite. Once connected, they receive a daily sales forecast per dish, adjusted for weather and local events.</p>
+      <p>Fully automated — no more manual exports.</p>
 
       <div class="flow-diagram">
-        <div class="flow-step">Lightspeed Restaurant</div>
-        <div class="flow-arrow">↓</div>
-        <div style="font-size: var(--font-size-small); color: var(--color-gray-medium); margin-bottom: var(--spacing-sm);">OAuth 2.0 (read-only)</div>
+        <div class="flow-step">MplusKASSA Q-line</div>
+        <div class="flow-arrow">&darr;</div>
+        <div style="font-size: var(--font-size-small); color: var(--color-gray-medium); margin-bottom: var(--spacing-sm);">API / Webhooks</div>
         <div class="flow-step">deitalite</div>
-        <div class="flow-arrow">↓</div>
-        <div class="flow-step">Dagelijkse forecast email</div>
+        <div class="flow-arrow">&darr;</div>
+        <div class="flow-step">Daily forecast email</div>
       </div>
     </div>
   </section>
@@ -375,33 +326,33 @@
   <!-- Section 2: Data needed -->
   <section class="partner-section">
     <div class="container-narrow" style="text-align: left;">
-      <h2>Benodigde data</h2>
+      <h2>Data we need</h2>
 
       <table class="data-table">
         <thead>
           <tr>
             <th>Data</th>
-            <th>Doel</th>
+            <th>Purpose</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Verkopen per artikel</strong> (tickets + regels)</td>
-            <td>Voorspellingsmodellen trainen</td>
+            <td><strong>Sales per item</strong> (receipts + lines)</td>
+            <td>Train prediction models</td>
           </tr>
           <tr>
-            <td><strong>Menu-items en categorieën</strong></td>
-            <td>Forecasts groeperen per categorie</td>
+            <td><strong>Products and articles</strong></td>
+            <td>Group forecasts by category</td>
           </tr>
           <tr>
-            <td><strong>Historische data</strong> (12+ maanden)</td>
-            <td>Seizoenspatronen leren</td>
+            <td><strong>Historical data</strong> (12+ months)</td>
+            <td>Learn seasonal patterns</td>
           </tr>
         </tbody>
       </table>
 
       <div class="note-box">
-        <p>We vragen alleen read-only toegang tot verkoopdata. Geen toegang tot klantgegevens, betalingen of andere gevoelige informatie.</p>
+        <p>We only request read-only access to sales data. No access to customer data, payments, or other sensitive information.</p>
       </div>
     </div>
   </section>
@@ -409,30 +360,33 @@
   <!-- Section 3: Technical specs -->
   <section class="partner-section">
     <div class="container-narrow" style="text-align: left;">
-      <h2>Technische aanpak</h2>
+      <h2>Technical specifications</h2>
 
       <div class="tech-specs">
         <ul>
-          <li><strong>Authenticatie:</strong> OAuth 2.0 Authorization Code Grant met refresh tokens</li>
-          <li><strong>Data sync:</strong> Initiële backfill (12+ maanden) + maandelijkse refresh voor modeltraining</li>
-          <li><strong>Endpoints:</strong> <code>FinancialV2/Get Sales</code>, <code>Get business day sales</code>, <code>Get All Menus</code></li>
-          <li><strong>Scopes:</strong> <code>financial-api</code> (verkoopdata), <code>orders-api</code> (menu's en items)</li>
-          <li><strong>Formaat:</strong> REST API met JSON responses</li>
+          <li><strong>Protocol:</strong> SOAP API with WSDL + Webhooks</li>
+          <li><strong>Relevant endpoints:</strong> Financial data, Orders, Receipts, Products</li>
+          <li><strong>Data sync:</strong> Initial backfill (12+ months) + monthly refresh for model retraining</li>
+          <li><strong>SDK:</strong> PHP client library available</li>
         </ul>
       </div>
+
+      <p style="font-size: var(--font-size-small); color: var(--color-gray-medium);">
+        Reference: <a href="https://developers.mpluskassa.nl/" target="_blank" style="color: var(--color-brand-green);">MplusKASSA Developer Portal</a>
+      </p>
     </div>
   </section>
 
   <!-- Section 4: Security -->
   <section class="partner-section">
     <div class="container-narrow" style="text-align: left;">
-      <h2>Beveiliging & compliance</h2>
+      <h2>Security & compliance</h2>
 
       <ul class="security-list">
-        <li><strong>Read-only toegang</strong> — we wijzigen nooit data in Lightspeed</li>
-        <li><strong>GDPR-compliant</strong> — verwerking onder expliciete klantentoestemming</li>
-        <li><strong>Dataminimalisatie</strong> — alleen wat nodig is voor voorspellingen</li>
-        <li><strong>Revoceerbaar</strong> — klanten kunnen toegang altijd intrekken</li>
+        <li><strong>Read-only access</strong> — we never modify data in MplusKASSA</li>
+        <li><strong>GDPR-compliant</strong> — processing under explicit customer consent</li>
+        <li><strong>Data minimization</strong> — only what's needed for forecasting</li>
+        <li><strong>Revocable</strong> — customers can revoke access at any time</li>
       </ul>
     </div>
   </section>
@@ -440,11 +394,11 @@
   <!-- Section 5: About -->
   <section class="partner-section">
     <div class="container-narrow" style="text-align: left;">
-      <h2>Over ons</h2>
+      <h2>About us</h2>
       <div class="about-text">
-        <p><strong>deita</strong> ontwikkelt <strong>deitalite</strong>, een service voor vraagvoorspelling in de horeca. Opgericht door Dei Martinez Elurbe, PhD — 15+ jaar onderzoekservaring gecombineerd met een familieachtergrond in de Spaanse horeca.</p>
-        <p>We helpen restauranteigenaren om beter in te kopen, minder te verspillen en rustiger te werken.</p>
-        <p><a href="https://deitalite.com" class="about-link">→ Meer over deitalite</a></p>
+        <p><strong>deita</strong> develops <strong>deitalite</strong>, a demand forecasting service for hospitality. Founded by Dei Martinez Elurbe, PhD — 15+ years of research experience combined with a family background in Spanish hospitality.</p>
+        <p>We help restaurant owners buy smarter, waste less, and work calmer.</p>
+        <p><a href="https://deitalite.com" class="about-link">&rarr; Learn more about deitalite</a></p>
       </div>
     </div>
   </section>
@@ -452,21 +406,21 @@
   <!-- Section 6: Contact CTA -->
   <section style="background-color: #2d4229; padding: 60px 0; text-align: center;">
     <div class="container">
-      <h2 style="color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">Volgende stappen</h2>
-      <p style="color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">Wij staan klaar voor een kort technisch gesprek om de integratiemogelijkheden te bespreken.</p>
-      <p style="color: rgba(255,255,255,0.85); font-size: 14px; margin-top: 8px;">(Telefoongesprekken in het Engels)</p>
+      <h2 style="color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">Next steps</h2>
+      <p style="color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">We're ready for a brief technical call to discuss integration possibilities. We're interested in joining the Partner program to collaborate on this integration.</p>
+      <p style="color: rgba(255,255,255,0.85); font-size: 14px; margin-top: 8px;">(Phone conversations in English)</p>
 
       <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 24px;">
         <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="font-size: 20px;">✉️</span>
+          <span style="font-size: 20px;">&#9993;</span>
           <a href="mailto:info@deita.eu" style="color: white; text-decoration: underline; font-weight: 600;">info@deita.eu</a>
         </div>
         <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="font-size: 20px;">📞</span>
+          <span style="font-size: 20px;">&#128222;</span>
           <a href="tel:+31639227686" style="color: white; text-decoration: underline; font-weight: 600;">+31 6 39 22 76 86</a>
         </div>
         <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="font-size: 20px;">🌐</span>
+          <span style="font-size: 20px;">&#127760;</span>
           <a href="https://deitalite.com" style="color: white; text-decoration: underline; font-weight: 600;">deitalite.com</a>
         </div>
       </div>
@@ -476,7 +430,7 @@
   <!-- Simple Footer -->
   <footer class="partner-footer">
     <div class="container">
-      <p>&copy; 2026 deita & deitalite · <a href="https://deitalite.com/privacy.html">Privacy Policy</a></p>
+      <p>&copy; 2026 deita & deitalite &middot; <a href="https://deitalite.com/privacy.html">Privacy Policy</a></p>
     </div>
   </footer>
 
