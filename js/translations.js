@@ -201,7 +201,7 @@ const translations = {
     'usp.item3': 'Weer + evenementen ingebouwd',
 
     // Hero Section
-    'hero.title': 'Je dagelijkse preplijst — aangepast aan weer en de evenementen die je omzet bepalen',
+    'hero.title': 'Je dagelijkse preplijst, aangepast aan weer en de evenementen die je omzet bepalen',
     'hero.subtitle': 'deitalite combineert je verkoopgeschiedenis met weersvoorspellingen, feestdagen, cruiseaankomsten en lokale evenementen om te laten zien wat je kunt verwachten. Gerecht voor gerecht, dag voor dag.',
     'hero.benefit1': 'Prep de juiste hoeveelheid: minder derving, minder uitverkocht',
     'hero.benefit2': 'Plan je rooster op basis van verwachte drukte',
@@ -211,11 +211,11 @@ const translations = {
     'hero.trust': 'Geen app nodig · Geen integratie vereist · Werkt met elke kassa-export',
 
     // Problem Section
-    'problem.title': 'Je kijkt al naar het weer en checkt de agenda — wij vertalen ze naar cijfers',
+    'problem.title': 'Je kijkt al naar het weer en checkt de agenda. Wij vertalen ze naar cijfers.',
     'problem.intro': 'Je volgt de weersverwachting, je weet hoe je terras reageert op zon of regen en je past daarop aan. Het lastige is niet het weer voorspellen. Het is weten <em>hoeveel het verschilt</em> met een normale dinsdag, zaterdag of zondag.',
-    'problem.item1': 'Een regenachtige zaterdag remt het terras — maar met hoeveel couverts?',
-    'problem.item2': 'Drie cruiseschepen komen dinsdag aan — hoeveel extra prep heb je eigenlijk nodig?',
-    'problem.item3': 'Een lang vakantieweekend nadert — welke dagen pieken, welke blijven vlak?',
+    'problem.item1': 'Een regenachtige zaterdag remt het terras. Maar met hoeveel couverts?',
+    'problem.item2': 'Drie cruiseschepen komen dinsdag aan. Hoeveel extra prep heb je eigenlijk nodig?',
+    'problem.item3': 'Een lang vakantieweekend nadert. Welke dagen pieken, welke blijven vlak?',
     'problem.conclusion': 'Je ervaring geeft je nu al een goed gevoel voor de vraag. Wij zetten daar cijfers bovenop, zodat je met vertrouwen kunt plannen in plaats van gokken.',
     'problem.cta': 'Zie hoe het werkt',
 
@@ -388,7 +388,7 @@ const translations = {
     'usp.item3': 'Tiempo + eventos incluidos',
 
     // Hero Section
-    'hero.title': 'Tu plan de preparación diario — ajustado al tiempo y los eventos que impulsan tus ventas',
+    'hero.title': 'Tu plan de preparación diario, ajustado al tiempo y los eventos que impulsan tus ventas',
     'hero.subtitle': 'deitalite combina tu historial de ventas con previsiones meteorológicas, festivos, llegadas de cruceros y eventos locales para mostrarte qué esperar. Plato a plato, día a día.',
     'hero.benefit1': 'Prepara lo justo: menos mermas, menos roturas de stock',
     'hero.benefit2': 'Ajusta turnos a la demanda prevista',
@@ -398,11 +398,11 @@ const translations = {
     'hero.trust': 'Sin app · Sin integración necesaria · Funciona con cualquier exportación de TPV',
 
     // Problem Section
-    'problem.title': 'Ya miras el tiempo y el calendario — nosotros los convertimos en números',
+    'problem.title': 'Ya miras el tiempo y el calendario. Nosotros los convertimos en números.',
     'problem.intro': 'Ya miras el parte, sabes cómo reacciona tu terraza al sol o la lluvia y ajustas en consecuencia. Lo difícil no es el tiempo. Es saber <em>cuánto cambia</em> respecto a un martes, sábado o domingo normal.',
-    'problem.item1': 'Si llueve el sábado, la terraza se cae — pero ¿cuántos cubiertos menos?',
-    'problem.item2': 'Tres cruceros llegan el martes — ¿cuánta preparación extra necesitas realmente?',
-    'problem.item3': 'Se acerca un puente largo — ¿qué días suben, cuáles se quedan planos?',
+    'problem.item1': 'Si llueve el sábado, la terraza se cae. Pero ¿cuántos cubiertos menos?',
+    'problem.item2': 'Tres cruceros llegan el martes. ¿Cuánta preparación extra necesitas realmente?',
+    'problem.item3': 'Se acerca un puente largo. ¿Qué días suben, cuáles se quedan planos?',
     'problem.conclusion': 'Tu experiencia ya te da un buen instinto para la demanda. Nosotros ponemos números encima de ese instinto, para que planifiques con confianza en vez de adivinar.',
     'problem.cta': 'Ver cómo funciona',
 
