@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>deitalite + Lightspeed | Slimme verkoopvoorspellingen</title>
+  <meta name="description" content="deitalite wil een officiële integratie bouwen voor Lightspeed Restaurant-klanten. Dagelijkse verkoopvoorspellingen per gerecht, aangepast aan weer en evenementen.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="deitalite + Lightspeed | Slimme verkoopvoorspellingen">
+  <meta property="og:description" content="Dagelijkse verkoopvoorspellingen voor Lightspeed Restaurant-klanten. Read-only integratie via OAuth 2.0.">
+  <meta property="og:url" content="https://deitalite.com/partners/lightspeed">
+  <meta property="og:type" content="website">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://deitalite.com/partners/lightspeed">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../../assets/images/favicon.ico">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../css/main.css">
+
+  <style>
+    /* Partner page specific styles */
+    .partner-hero {
+      background: linear-gradient(135deg, var(--color-white) 0%, var(--color-off-white) 100%);
+      padding: var(--spacing-3xl) 0;
+      text-align: center;
+    }
+
+    .partner-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--spacing-lg);
+      margin-bottom: var(--spacing-xl);
+      flex-wrap: wrap;
+    }
+
+    .partner-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .partner-logo.deitalite {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--color-brand-green);
+    }
+
+    .partner-logo.lightspeed img {
+      height: 36px;
+      width: auto;
+    }
+
+    .partner-plus {
+      font-size: 36px;
+      color: var(--color-gray-medium);
+      font-weight: 300;
+    }
+
+    .partner-hero h1 {
+      max-width: 700px;
+      margin: 0 auto var(--spacing-md);
+    }
+
+    .partner-hero .hero-subheadline {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Partner sections */
+    .partner-section {
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .partner-section:nth-child(even) {
+      background-color: var(--color-off-white);
+    }
+
+    .partner-section h2 {
+      text-align: left;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .partner-section p {
+      margin-bottom: var(--spacing-md);
+    }
+
+    /* Flow diagram */
+    .flow-diagram {
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-light);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-lg);
+      margin: var(--spacing-lg) 0;
+      text-align: center;
+    }
+
+    .flow-step {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      padding: var(--spacing-sm) var(--spacing-md);
+      background: var(--color-off-white);
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      margin: var(--spacing-xs);
+    }
+
+    .flow-arrow {
+      font-size: 24px;
+      color: var(--color-gray-medium);
+      display: block;
+      margin: var(--spacing-sm) 0;
+    }
+
+    /* Data table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--spacing-lg) 0;
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: var(--spacing-sm) var(--spacing-md);
+      text-align: left;
+      border-bottom: 1px solid var(--color-gray-light);
+    }
+
+    .data-table th {
+      background: var(--color-off-white);
+      font-weight: 600;
+      color: var(--color-brand-green);
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Security list */
+    .security-list {
+      list-style: none;
+      padding: 0;
+      margin: var(--spacing-lg) 0;
+    }
+
+    .security-list li {
+      padding: var(--spacing-sm) 0;
+      padding-left: var(--spacing-lg);
+      position: relative;
+    }
+
+    .security-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--color-success);
+      font-weight: 700;
+    }
+
+    .security-list strong {
+      color: var(--color-brand-green);
+    }
+
+    /* Tech specs */
+    .tech-specs {
+      background: var(--color-off-white);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-lg);
+      margin: var(--spacing-lg) 0;
+    }
+
+    .tech-specs ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .tech-specs li {
+      padding: var(--spacing-xs) 0;
+      font-family: 'Monaco', 'Menlo', monospace;
+      font-size: var(--font-size-small);
+    }
+
+    .tech-specs li strong {
+      color: var(--color-brand-green);
+      font-family: var(--font-family);
+    }
+
+    /* Note box */
+    .note-box {
+      background: rgba(62, 87, 60, 0.08);
+      border-left: 4px solid var(--color-brand-green);
+      padding: var(--spacing-md);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: var(--spacing-lg) 0;
+    }
+
+    .note-box p {
+      margin: 0;
+      font-size: var(--font-size-small);
+      color: var(--color-dark-text);
+    }
+
+    /* About section */
+    .about-text {
+      max-width: 700px;
+    }
+
+    .about-link {
+      color: var(--color-brand-green);
+      text-decoration: underline;
+    }
+
+    /* Contact section */
+    .contact-section {
+      background-color: var(--color-brand-green);
+      color: #ffffff !important;
+      text-align: center;
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .contact-section h2 {
+      color: #ffffff !important;
+      text-align: center;
+    }
+
+    .contact-section p {
+      color: #ffffff !important;
+    }
+
+    .contact-details {
+      display: flex;
+      justify-content: center;
+      gap: var(--spacing-xl);
+      flex-wrap: wrap;
+      margin-top: var(--spacing-lg);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      color: #ffffff !important;
+      font-size: var(--font-size-body);
+      font-weight: 500;
+    }
+
+    .contact-item a {
+      color: #ffffff !important;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .contact-icon {
+      font-size: 20px;
+    }
+
+    /* Simple header for partner pages */
+    .partner-header {
+      background-color: var(--color-white);
+      border-bottom: 1px solid var(--color-gray-light);
+      padding: var(--spacing-sm) 0;
+    }
+
+    .partner-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .partner-header .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--color-brand-green);
+      text-decoration: none;
+    }
+
+    /* Footer simplified */
+    .partner-footer {
+      background-color: var(--color-footer-dark);
+      color: var(--color-white);
+      padding: var(--spacing-lg) 0;
+      text-align: center;
+    }
+
+    .partner-footer p {
+      margin: 0;
+      font-size: var(--font-size-small);
+      opacity: 0.8;
+    }
+
+    .partner-footer a {
+      color: var(--color-white);
+      text-decoration: underline;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .partner-logos {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+      }
+
+      .partner-plus {
+        transform: rotate(90deg);
+      }
+
+      .contact-details {
+        flex-direction: column;
+        gap: var(--spacing-md);
+      }
+
+      .data-table {
+        font-size: var(--font-size-small);
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: var(--spacing-xs) var(--spacing-sm);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Simple Header -->
+  <header class="partner-header">
+    <div class="container">
+      <a href="https://deitalite.com" class="logo">deitalite</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="partner-hero">
+    <div class="container">
+      <div class="partner-logos">
+        <span class="partner-logo deitalite">deitalite</span>
+        <span class="partner-plus">+</span>
+        <span class="partner-logo lightspeed">
+          <img src="lightspeed-logo.svg" alt="Lightspeed" />
+        </span>
+      </div>
+      <h1>Slimme verkoopvoorspellingen voor Lightspeed Restaurant-klanten</h1>
+      <p class="hero-subheadline">Wij helpen horecaondernemers beter voorbereiden op drukke en rustige dagen, op basis van hun eigen verkoopdata, weer en evenementen.</p>
+    </div>
+  </section>
+
+  <!-- Section 1: What we want to build -->
+  <section class="partner-section">
+    <div class="container-narrow" style="text-align: left;">
+      <h2>Wat we willen bouwen met Lightspeed</h2>
+      <p>Een officiële integratie waarmee Lightspeed Restaurant-klanten met één klik hun verkoopdata kunnen delen. Geen exports, geen handmatig werk. Alleen een simpele OAuth-autorisatie.</p>
+      <p>Na autorisatie ontvangen ze elke ochtend een verkoopvoorspelling per gerecht, aangepast aan het weer en lokale evenementen.</p>
+
+      <div class="flow-diagram">
+        <div class="flow-step">Lightspeed Restaurant</div>
+        <div class="flow-arrow">↓</div>
+        <div style="font-size: var(--font-size-small); color: var(--color-gray-medium); margin-bottom: var(--spacing-sm);">OAuth 2.0 (read-only)</div>
+        <div class="flow-step">deitalite</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step">Dagelijkse forecast email</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Data needed -->
+  <section class="partner-section">
+    <div class="container-narrow" style="text-align: left;">
+      <h2>Benodigde data</h2>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Doel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Verkopen per artikel</strong> (tickets + regels)</td>
+            <td>Voorspellingsmodellen trainen</td>
+          </tr>
+          <tr>
+            <td><strong>Menu-items en categorieën</strong></td>
+            <td>Forecasts groeperen per categorie</td>
+          </tr>
+          <tr>
+            <td><strong>Historische data</strong> (12+ maanden)</td>
+            <td>Seizoenspatronen leren</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note-box">
+        <p>We vragen alleen read-only toegang tot verkoopdata. Geen toegang tot klantgegevens, betalingen of andere gevoelige informatie.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Technical specs -->
+  <section class="partner-section">
+    <div class="container-narrow" style="text-align: left;">
+      <h2>Technische aanpak</h2>
+
+      <div class="tech-specs">
+        <ul>
+          <li><strong>Authenticatie:</strong> OAuth 2.0 Authorization Code Grant met refresh tokens</li>
+          <li><strong>Data sync:</strong> Initiële backfill (12+ maanden) + dagelijkse incrementele updates</li>
+          <li><strong>Endpoints:</strong> <code>FinancialV2/Get Sales</code>, <code>Get business day sales</code>, <code>Get All Menus</code></li>
+          <li><strong>Scopes:</strong> <code>financial-api</code> (verkoopdata), <code>orders-api</code> (menu's en items)</li>
+          <li><strong>Formaat:</strong> REST API met JSON responses</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Security -->
+  <section class="partner-section">
+    <div class="container-narrow" style="text-align: left;">
+      <h2>Beveiliging & compliance</h2>
+
+      <ul class="security-list">
+        <li><strong>Read-only toegang</strong> — we wijzigen nooit data in Lightspeed</li>
+        <li><strong>GDPR-compliant</strong> — verwerking onder expliciete klantentoestemming</li>
+        <li><strong>Dataminimalisatie</strong> — alleen wat nodig is voor voorspellingen</li>
+        <li><strong>Revoceerbaar</strong> — klanten kunnen toegang altijd intrekken</li>
+        <li><strong>Versleuteld</strong> — data in transit en at rest</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 5: About -->
+  <section class="partner-section">
+    <div class="container-narrow" style="text-align: left;">
+      <h2>Over ons</h2>
+      <div class="about-text">
+        <p><strong>deita</strong> ontwikkelt <strong>deitalite</strong>, een service voor vraagvoorspelling in de horeca. Opgericht door Dei Martinez Elurbe, PhD — 15+ jaar onderzoekservaring gecombineerd met een familieachtergrond in de Spaanse horeca.</p>
+        <p>We helpen restauranteigenaren om beter in te kopen, minder te verspillen en rustiger te werken.</p>
+        <p><a href="https://deitalite.com" class="about-link">→ Meer over deitalite</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Contact CTA -->
+  <section style="background-color: #2d4229; padding: 60px 0; text-align: center;">
+    <div class="container">
+      <h2 style="color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">Volgende stappen</h2>
+      <p style="color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">Wij staan klaar voor een kort technisch gesprek om de integratiemogelijkheden te bespreken.</p>
+      <p style="color: rgba(255,255,255,0.85); font-size: 14px; margin-top: 8px;">(Telefoongesprekken in het Engels)</p>
+
+      <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 24px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 20px;">✉️</span>
+          <a href="mailto:info@deita.eu" style="color: white; text-decoration: underline; font-weight: 600;">info@deita.eu</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 20px;">📞</span>
+          <a href="tel:+31639227686" style="color: white; text-decoration: underline; font-weight: 600;">+31 6 39 22 76 86</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 20px;">🌐</span>
+          <a href="https://deitalite.com" style="color: white; text-decoration: underline; font-weight: 600;">deitalite.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simple Footer -->
+  <footer class="partner-footer">
+    <div class="container">
+      <p>&copy; 2026 deita & deitalite · <a href="https://deitalite.com/privacy.html">Privacy Policy</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
