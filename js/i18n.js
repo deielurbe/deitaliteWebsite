@@ -84,6 +84,9 @@ const i18n = {
 
     // Update language selector UI
     this.updateLanguageSelectorUI();
+
+    // Dispatch event for other scripts (e.g., Tally form switching)
+    window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
   },
 
   // Update all content on the page
