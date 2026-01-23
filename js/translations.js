@@ -99,7 +99,7 @@ const translations = {
     'pricing.tier3.name': '3 services',
     'pricing.tier3.price': '€89/month',
     'pricing.tier3.desc': 'Full-day operations',
-    'pricing.note': 'Most restaurants choose 2 services. Forecasts are per-service so your prep decisions are actionable.',
+    'pricing.note': 'Most restaurants choose 2 services. One email per service, ready to share with whoever handles that shift.',
     'pricing.integration': 'Direct integration with',
     'pricing.cta': 'Start free trial',
 
@@ -283,7 +283,7 @@ const translations = {
     'pricing.tier3.name': '3 services',
     'pricing.tier3.price': '€89/maand',
     'pricing.tier3.desc': 'Hele dag',
-    'pricing.note': 'De meeste restaurants kiezen 2 services. Forecasts zijn per service zodat je prepbeslissingen uitvoerbaar zijn.',
+    'pricing.note': 'De meeste restaurants kiezen 2 services. Eén email per service, klaar om te delen met wie die dienst draait.',
     'pricing.integration': 'Directe integratie met',
     'pricing.cta': 'Start gratis proefperiode',
 
@@ -467,7 +467,7 @@ const translations = {
     'pricing.tier3.name': '3 servicios',
     'pricing.tier3.price': '€89/mes',
     'pricing.tier3.desc': 'Operación todo el día',
-    'pricing.note': 'La mayoría de restaurantes eligen 2 servicios. Las previsiones son por servicio para que tus decisiones de preparación sean accionables.',
+    'pricing.note': 'La mayoría de restaurantes eligen 2 servicios. Un email por servicio, listo para compartir con quien lleve ese turno.',
     'pricing.integration': 'Integración directa con',
     'pricing.cta': 'Empezar prueba gratis',
 
