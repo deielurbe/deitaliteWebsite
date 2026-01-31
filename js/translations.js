@@ -555,3 +555,51 @@ const translations = {
     'footer.copyright': '© 2026 deita & deitalite. Todos los derechos reservados.'
   }
 };
+
+// ===================================
+// Translation Key Validator
+// ===================================
+// Validates that all languages have matching translation keys.
+// Runs in dev mode only (when URL contains ?dev or localhost).
+
+function validateTranslations() {
+  const isDev = window.location.search.includes('dev') ||
+                window.location.hostname === 'localhost' ||
+                window.location.hostname === '127.0.0.1';
+
+  if (!isDev) return;
+
+  const langs = Object.keys(translations);
+  const baseKeys = Object.keys(translations.en);
+
+  let hasErrors = false;
+
+  for (const lang of langs) {
+    if (lang === 'en') continue;
+
+    const langKeys = Object.keys(translations[lang]);
+
+    // Find missing keys
+    const missing = baseKeys.filter(k => !(k in translations[lang]));
+    if (missing.length > 0) {
+      console.warn(`[translations] ${lang} missing ${missing.length} keys:`, missing);
+      hasErrors = true;
+    }
+
+    // Find extra keys (in lang but not in en)
+    const extra = langKeys.filter(k => !(k in translations.en));
+    if (extra.length > 0) {
+      console.warn(`[translations] ${lang} has ${extra.length} extra keys:`, extra);
+      hasErrors = true;
+    }
+  }
+
+  if (!hasErrors) {
+    console.log('[translations] All languages have matching keys ✓');
+  }
+}
+
+// Run validation on load
+if (typeof window !== 'undefined') {
+  window.addEventListener('DOMContentLoaded', validateTranslations);
+}
