@@ -173,7 +173,7 @@ const translations = {
     'cta.contact': 'info@deita.eu',
 
     // Footer
-    'footer.tagline': 'Built by Deita. Data science with hospitality roots.',
+    'footer.tagline': 'Built by deita. Data science with hospitality roots.',
     'footer.links': 'Links',
     'footer.how': 'How it works',
     'footer.pricing': 'Pricing',
@@ -357,7 +357,7 @@ const translations = {
     'cta.contact': 'info@deita.eu',
 
     // Footer
-    'footer.tagline': 'Gemaakt door Deita. Data science met hospitalityroots.',
+    'footer.tagline': 'Gemaakt door deita. Data science met hospitalityroots.',
     'footer.links': 'Links',
     'footer.how': 'Hoe het werkt',
     'footer.pricing': 'Prijzen',
@@ -541,7 +541,7 @@ const translations = {
     'cta.contact': 'info@deita.eu',
 
     // Footer
-    'footer.tagline': 'Hecho por Deita. Data science con raíces en hostelería.',
+    'footer.tagline': 'Hecho por deita. Data science con raíces en hostelería.',
     'footer.links': 'Enlaces',
     'footer.how': 'Cómo funciona',
     'footer.pricing': 'Precios',
