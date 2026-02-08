@@ -167,7 +167,39 @@ if ('IntersectionObserver' in window) {
   });
 }
 
-// 8. FAQ Accordion Toggle
+// 8. Demo form inline submission
+const demoForm = document.getElementById('demo-form');
+if (demoForm) {
+  demoForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(demoForm);
+    const submitBtn = demoForm.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = '...';
+
+    fetch('https://formspree.io/f/mdanvlpg', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(response) {
+      if (response.ok) {
+        demoForm.style.display = 'none';
+        document.getElementById('demo-form-success').style.display = 'block';
+      } else {
+        document.getElementById('demo-form-error').style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = demoForm.querySelector('button[type="submit"]')?.dataset?.originalText || 'Send me a sample';
+      }
+    })
+    .catch(function() {
+      document.getElementById('demo-form-error').style.display = 'block';
+      submitBtn.disabled = false;
+    });
+  });
+}
+
+// 9. FAQ Accordion Toggle
 document.querySelectorAll('.faq-question').forEach(button => {
   button.addEventListener('click', () => {
     const faqItem = button.parentElement;

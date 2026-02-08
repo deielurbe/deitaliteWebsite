@@ -489,11 +489,83 @@ section:nth-child(even) {
   }
 }
 
-/* Proof section callouts responsive */
-@media (max-width: 768px) {
-  .proof-callouts {
-    grid-template-columns: 1fr !important;
-  }
+/* Proof section */
+.proof-subtitle {
+  text-align: center;
+  color: var(--color-gray-medium);
+  margin-bottom: var(--spacing-xl);
+}
+
+.proof-callouts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.proof-callout {
+  text-align: center;
+}
+
+.proof-callout-icon {
+  font-size: 32px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.proof-callout h4 {
+  margin-bottom: var(--spacing-xs);
+}
+
+.proof-callout p {
+  color: var(--color-gray-medium);
+  font-size: var(--font-size-small);
+}
+
+.demo-form-container {
+  margin-top: var(--spacing-xl);
+  text-align: center;
+}
+
+.demo-form-title {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-dark-text);
+  font-weight: 600;
+}
+
+.demo-form-subtitle {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-gray-medium);
+  font-size: var(--font-size-small);
+}
+
+.demo-form {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.demo-form-input {
+  flex: 1;
+  min-width: 250px;
+  padding: 14px 18px;
+  border: 2px solid var(--color-gray-light);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-body);
+  font-family: var(--font-family);
+}
+
+.demo-form-message {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.demo-form-message p {
+  color: var(--color-brand-green);
+  font-weight: 600;
 }
 
 /* 7. USP Banner */
@@ -1259,6 +1331,20 @@ section:nth-child(even) {
 }
 
 .pricing-note {
+  text-align: center;
+  color: var(--color-gray-medium);
+  font-size: var(--font-size-small);
+  margin-top: var(--spacing-sm);
+}
+
+.pricing-vat {
+  text-align: center;
+  color: var(--color-gray-medium);
+  font-size: var(--font-size-small);
+  margin-top: var(--spacing-xs);
+}
+
+.pricing-regions {
   text-align: center;
   color: var(--color-gray-medium);
   font-size: var(--font-size-small);

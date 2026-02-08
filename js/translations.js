@@ -24,14 +24,13 @@ const translations = {
     'hero.trust': 'No card required · Works with unTill + any POS export',
 
     // Problem Section (Value Prop)
-    'problem.title': 'You feel it in your restaurant. We count it, dish by dish.',
-    'problem.intro': 'Weather doesn\'t just affect foot traffic. It changes what people order. deitalite learns your specific patterns and sends you a forecast every morning. Day by day. Dish by dish.',
-    'problem.cta': 'See how it works',
+    'problem.title': 'Every restaurant overpreps. The question is how much.',
+    'problem.intro': 'A few extra portions here, a batch that doesn\'t sell there. It adds up fast. deitalite learns your patterns — weather, day of week, local events — and tells you what to expect before you start prepping.',
 
     // How It Works Section
     'how.title': 'How it works',
     'how.step1.title': 'Share your sales data',
-    'how.step1.text': 'Direct sync with unTill, or export from any other POS. 1-2 years of data.',
+    'how.step1.text': 'Direct sync with unTill, or export from any other POS. 12 months minimum.',
     'how.step2.title': 'We build your model',
     'how.step2.text': 'Custom forecasts based on YOUR patterns, not industry averages.',
     'how.step3.title': 'Forecasts arrive daily',
@@ -58,7 +57,7 @@ const translations = {
     // ROI Section
     'roi.title': 'The math is simple',
     'roi.subtitle': 'Better prep decisions save real money. Less waste, fewer stockouts, smarter staffing.',
-    'roi.stat1.number': '€300–600/month',
+    'roi.stat1.number': '€400–600/month',
     'roi.stat1.title': 'less food waste',
     'roi.stat1.text': 'Prep what you\'ll actually sell. Less spoilage, less over-ordering. On a typical €3,000 food spend, that\'s real money back.',
     'roi.stat2.number': 'Staff smarter',
@@ -68,7 +67,7 @@ const translations = {
     'roi.stat3.title': 'on a busy day',
     'roi.stat3.text': 'Know ahead when you\'ll need extra stock. No more running out of best-sellers when the terrace is full.',
     'roi.exampleLabel': 'Bottom line',
-    'roi.example': 'Waste €50 of food a week? That\'s €200 a month you could save. Try it free for 14 days.',
+    'roi.example': 'Throw away €20 of food a day? That\'s €600 a month. Try it free for 14 days.',
 
     // Proof Section (NEW)
     'proof.title': 'What you\'ll check each morning',
@@ -82,6 +81,8 @@ const translations = {
     'proof.form.title': 'Want to see a live sample?',
     'proof.form.subtitle': 'Enter your email and we\'ll send you a real forecast — with today\'s weather.',
     'proof.form.submit': 'Send me a sample',
+    'proof.form.success': 'Check your inbox! A sample forecast is on the way.',
+    'proof.form.error': 'Something went wrong. Please try again or email us at info@deita.eu.',
     'proof.form.privacy': 'No spam, just one sample email.',
 
     // Pricing Section
@@ -101,6 +102,8 @@ const translations = {
     'pricing.tier3.desc': 'Full-day operations',
     'pricing.note': 'Most restaurants choose 2 services. One email per service, ready to share with whoever handles that shift.',
     'pricing.integration': 'Direct integration with',
+    'pricing.vat': 'All prices exclude VAT.',
+    'pricing.regions': 'Working with restaurants in Spain and the Netherlands',
     'pricing.cta': 'Start free trial',
 
     // FAQ Section
@@ -108,7 +111,7 @@ const translations = {
     'faq.q1.question': 'Which POS systems work?',
     'faq.q1.answer': '<strong>We have direct integration with unTill.</strong> For other systems (Lightspeed, Square, Toast, Zettle, etc.), export item-level sales as CSV or Excel. If you can pull a sales report with date, item name, and quantity, we can use it.',
     'faq.q2.question': 'What data do I need?',
-    'faq.q2.answer': '<strong>1-2 years of sales data.</strong> Minimum 12 months so we capture seasonality. 24 months is even better. Your export should include date, item name, and quantity sold.',
+    'faq.q2.answer': '<strong>12 months of sales data.</strong> A full year lets us capture seasonality patterns and give you accurate forecasts from day one. Your export should include date, item name, and quantity sold.',
     'faq.q3.question': 'What do I actually do each day?',
     'faq.q3.answer': '<strong>Check email → see quantities → share with team. 30 seconds.</strong> Most restaurants check once a day or a few times a week. You see the next 7 days, adjust prep/ordering/staffing accordingly. It\'s a quick check, not a system to manage.',
     'faq.q4.question': 'How accurate are forecasts?',
@@ -116,7 +119,7 @@ const translations = {
     'faq.q5.question': 'How long does setup take?',
     'faq.q5.answer': '<strong>1 business day.</strong> You export and send your sales data. We build your forecast and start sending daily emails within one business day.',
     'faq.q6.question': 'Do I upload data every month?',
-    'faq.q6.answer': '<strong>Yes, if you continue.</strong> After 30 days, upload fresh sales data to keep your forecast current. Same simple export process. This ensures your forecast reflects recent trends and menu changes.',
+    'faq.q6.answer': '<strong>Once a month, same quick export.</strong> This keeps your forecast learning from your latest sales patterns and menu changes.',
     'faq.q7.question': 'What if my menu changed?',
     'faq.q7.answer': '<strong>Normal, we handle it.</strong> Each item needs history to forecast well. New dishes work but are less precise until they build up sales data. We can also group similar items so the forecast stays useful for prep.',
     'faq.q8.question': 'Is my data secure?',
@@ -127,8 +130,6 @@ const translations = {
     'faq.q10.answer': '<strong>Yes, drinks are included.</strong> We forecast any item in your sales data: food, drinks, desserts, whatever you track.',
     'faq.q11.question': 'Which locations do you support?',
     'faq.q11.answer': '<strong>Worldwide.</strong> Weather data updates automatically with global coverage. Pricing is in euros but we work with restaurants anywhere.',
-    'faq.q12.question': 'Will you integrate with my POS directly?',
-    'faq.q12.answer': '<strong>We have direct integration with unTill.</strong> For other POS systems, you export manually (a few clicks). More integrations coming soon.',
 
     // Start Page
     'start.hero.title': 'Start your free trial',
@@ -138,16 +139,16 @@ const translations = {
     'start.what.title': 'What you get',
     'start.what.item1': '<strong>Daily forecasts:</strong> demand predictions for the next 7 days, delivered at 7am.',
     'start.what.item2': '<strong>Weather and events:</strong> forecasts adjusted for what actually affects your restaurant.',
-    'start.what.item3': '<strong>Per-service breakdown:</strong> separate forecasts for lunch, dinner, or however you operate.',
+    'start.what.item3': '<strong>Per-service breakdown:</strong> separate forecasts for lunch, dinner, breakfast — whatever services you run.',
     'start.what.item4': '<strong>Email delivery:</strong> no app, no dashboard. Just check your inbox.',
     'start.need.title': 'What we need from you',
-    'start.need.item1': '<strong>Sales data:</strong> 1-2 years of item-level sales (CSV or Excel). We\'ll help you export.',
+    'start.need.item1': '<strong>Sales data:</strong> 12 months of item-level sales (CSV or Excel). We\'ll help you export.',
     'start.need.item2': '<strong>Your location:</strong> so we connect the right weather and event data.',
     'start.steps.title': 'How it works',
     'start.steps.step1.title': 'Sign up below',
     'start.steps.step1.text': 'Tell us about your restaurant. We\'ll send you export instructions for your POS.',
     'start.steps.step2.title': 'Share your data',
-    'start.steps.step2.text': 'Upload 1-2 years of sales data. We\'ll build your custom model.',
+    'start.steps.step2.text': 'Upload your sales data. We\'ll build your custom model.',
     'start.steps.step3.title': 'Start receiving forecasts',
     'start.steps.step3.text': 'Within 1 business day, you\'ll get daily emails at 7am with your forecast.',
     'start.form.heading': 'Ready? Let\'s get you set up.',
@@ -208,14 +209,13 @@ const translations = {
     'hero.trust': 'Geen creditcard nodig · Werkt met unTill + elke kassa-export',
 
     // Problem Section (Value Prop)
-    'problem.title': 'Jij voelt het in je restaurant. Wij tellen het, gerecht voor gerecht.',
-    'problem.intro': 'Weer beïnvloedt niet alleen de loop. Het verandert wat mensen bestellen. deitalite leert jouw specifieke patronen en stuurt elke ochtend een forecast. Dag voor dag. Gerecht voor gerecht.',
-    'problem.cta': 'Zie hoe het werkt',
+    'problem.title': 'Elk restaurant prept te veel. De vraag is hoeveel.',
+    'problem.intro': 'Een paar extra porties hier, een batch die niet verkoopt daar. Het loopt snel op. deitalite leert jouw patronen — weer, dag van de week, lokale evenementen — en vertelt je wat je kunt verwachten voordat je begint met preppen.',
 
     // How It Works Section
     'how.title': 'Hoe het werkt',
     'how.step1.title': 'Deel je verkoopdata',
-    'how.step1.text': 'Directe sync met unTill, of exporteer uit een andere kassa. 1-2 jaar data.',
+    'how.step1.text': 'Directe sync met unTill, of exporteer uit een andere kassa. Minimaal 12 maanden.',
     'how.step2.title': 'Wij bouwen je model',
     'how.step2.text': 'Forecasts op basis van JOUW patronen, niet branchegemiddelden.',
     'how.step3.title': 'Forecasts komen dagelijks',
@@ -242,7 +242,7 @@ const translations = {
     // ROI Section
     'roi.title': 'De rekensom is simpel',
     'roi.subtitle': 'Betere prepbeslissingen besparen echt geld. Minder derving, minder uitverkocht, slimmer roosteren.',
-    'roi.stat1.number': '€300–600/maand',
+    'roi.stat1.number': '€400–600/maand',
     'roi.stat1.title': 'minder derving',
     'roi.stat1.text': 'Prep wat je daadwerkelijk verkoopt. Minder bederf, minder overbestelling. Bij een typische €3.000 foodcost is dat echt geld terug.',
     'roi.stat2.number': 'Rooster slim',
@@ -252,7 +252,7 @@ const translations = {
     'roi.stat3.title': 'op een drukke dag',
     'roi.stat3.text': 'Weet vooraf wanneer je extra voorraad nodig hebt. Geen bestsellers meer uitverkocht als het terras vol zit.',
     'roi.exampleLabel': 'Onder de streep',
-    'roi.example': 'Gooi je €50 aan eten weg per week? Dat is €200 per maand die je kunt besparen. Probeer 14 dagen gratis.',
+    'roi.example': 'Gooi je €20 aan eten weg per dag? Dat is €600 per maand. Probeer 14 dagen gratis.',
 
     // Proof Section
     'proof.title': 'Wat je elke ochtend checkt',
@@ -266,6 +266,8 @@ const translations = {
     'proof.form.title': 'Wil je een voorbeeld zien?',
     'proof.form.subtitle': 'Vul je email in en we sturen je een echte forecast — met het weer van vandaag.',
     'proof.form.submit': 'Stuur me een voorbeeld',
+    'proof.form.success': 'Check je inbox! Een voorbeeldforecast is onderweg.',
+    'proof.form.error': 'Er ging iets mis. Probeer het opnieuw of mail ons op info@deita.eu.',
     'proof.form.privacy': 'Geen spam, alleen één voorbeeld-email.',
 
     // Pricing Section
@@ -285,6 +287,8 @@ const translations = {
     'pricing.tier3.desc': 'Hele dag',
     'pricing.note': 'De meeste restaurants kiezen 2 services. Eén email per service, klaar om te delen met wie die dienst draait.',
     'pricing.integration': 'Directe integratie met',
+    'pricing.vat': 'Alle prijzen zijn exclusief btw.',
+    'pricing.regions': 'Actief bij restaurants in Spanje en Nederland',
     'pricing.cta': 'Start gratis proefperiode',
 
     // FAQ Section
@@ -292,7 +296,7 @@ const translations = {
     'faq.q1.question': 'Welke kassasystemen werken?',
     'faq.q1.answer': '<strong>We hebben directe integratie met unTill.</strong> Voor andere systemen (Lightspeed, Square, Toast, Zettle, etc.) exporteer item-niveau verkopen als CSV of Excel. Als je een verkooprapport kunt trekken met datum, artikelnaam en aantal, kunnen wij het gebruiken.',
     'faq.q2.question': 'Welke data heb ik nodig?',
-    'faq.q2.answer': '<strong>1-2 jaar verkoopdata.</strong> Minimaal 12 maanden voor seizoenspatronen. 24 maanden is nog beter. Je export moet datum, artikelnaam en verkocht aantal bevatten.',
+    'faq.q2.answer': '<strong>12 maanden verkoopdata.</strong> Een volledig jaar laat ons seizoenspatronen vastleggen en je vanaf dag één nauwkeurige forecasts geven. Je export moet datum, artikelnaam en verkocht aantal bevatten.',
     'faq.q3.question': 'Wat doe ik elke dag?',
     'faq.q3.answer': '<strong>Check email → zie aantallen → deel met team. 30 seconden.</strong> De meeste restaurants checken één keer per dag of een paar keer per week. Je ziet de komende 7 dagen, past prep, inkoop en rooster daarop aan. Het is een snelle check, geen systeem om te beheren.',
     'faq.q4.question': 'Hoe nauwkeurig zijn de forecasts?',
@@ -300,7 +304,7 @@ const translations = {
     'faq.q5.question': 'Hoe lang duurt de setup?',
     'faq.q5.answer': '<strong>1 werkdag.</strong> Je exporteert en stuurt je verkoopdata. Wij bouwen je forecast en beginnen dagelijkse emails te sturen binnen één werkdag.',
     'faq.q6.question': 'Moet ik elke maand data uploaden?',
-    'faq.q6.answer': '<strong>Ja, als je doorgaat.</strong> Na 30 dagen upload je verse verkoopdata om je forecast actueel te houden. Zelfde simpele exportproces. Dit zorgt dat je forecast recente trends en menuwijzigingen meeneemt.',
+    'faq.q6.answer': '<strong>Eén keer per maand, dezelfde snelle export.</strong> Dit zorgt dat je forecast blijft leren van je nieuwste verkooppatronen en menuwijzigingen.',
     'faq.q7.question': 'Wat als mijn menu veranderd is?',
     'faq.q7.answer': '<strong>Normaal, wij handelen het af.</strong> Elk gerecht heeft historie nodig om goed te kunnen forecasten. Nieuwe gerechten werken maar zijn minder precies totdat ze verkoopdata opbouwen. We kunnen ook vergelijkbare items groeperen zodat de forecast bruikbaar blijft voor prep.',
     'faq.q8.question': 'Is mijn data veilig?',
@@ -311,8 +315,6 @@ const translations = {
     'faq.q10.answer': '<strong>Ja, dranken zijn inbegrepen.</strong> We forecasten elk artikel in je verkoopdata: eten, dranken, desserts, alles wat je bijhoudt.',
     'faq.q11.question': 'Welke locaties ondersteunen jullie?',
     'faq.q11.answer': '<strong>Wereldwijd.</strong> Weerdata wordt automatisch bijgewerkt met wereldwijde dekking. Prijzen zijn in euro\'s maar we werken met restaurants overal.',
-    'faq.q12.question': 'Integreren jullie direct met mijn kassa?',
-    'faq.q12.answer': '<strong>We hebben directe integratie met unTill.</strong> Voor andere kassasystemen exporteer je handmatig (een paar klikken). Meer integraties volgen binnenkort.',
 
     // Start Page
     'start.hero.title': 'Start je gratis proefperiode',
@@ -322,16 +324,16 @@ const translations = {
     'start.what.title': 'Wat je krijgt',
     'start.what.item1': '<strong>Dagelijkse forecasts:</strong> vraagvoorspellingen voor de komende 7 dagen, geleverd om 7 uur.',
     'start.what.item2': '<strong>Weer en evenementen:</strong> forecasts aangepast aan wat jouw restaurant beïnvloedt.',
-    'start.what.item3': '<strong>Per-service overzicht:</strong> aparte forecasts voor lunch, diner, of hoe je ook opereert.',
+    'start.what.item3': '<strong>Per-service overzicht:</strong> aparte forecasts voor lunch, diner, ontbijt — welke services je ook draait.',
     'start.what.item4': '<strong>Email bezorging:</strong> geen app, geen dashboard. Check gewoon je inbox.',
     'start.need.title': 'Wat we van jou nodig hebben',
-    'start.need.item1': '<strong>Verkoopdata:</strong> 1-2 jaar item-niveau verkopen (CSV of Excel). We helpen je exporteren.',
+    'start.need.item1': '<strong>Verkoopdata:</strong> 12 maanden item-niveau verkopen (CSV of Excel). We helpen je exporteren.',
     'start.need.item2': '<strong>Je locatie:</strong> zodat we de juiste weer- en evenementendata koppelen.',
     'start.steps.title': 'Hoe het werkt',
     'start.steps.step1.title': 'Meld je hieronder aan',
     'start.steps.step1.text': 'Vertel ons over je restaurant. We sturen je export-instructies voor je kassa.',
     'start.steps.step2.title': 'Deel je data',
-    'start.steps.step2.text': 'Upload 1-2 jaar verkoopdata. Wij bouwen je persoonlijke model.',
+    'start.steps.step2.text': 'Upload je verkoopdata. Wij bouwen je persoonlijke model.',
     'start.steps.step3.title': 'Begin met het ontvangen van forecasts',
     'start.steps.step3.text': 'Binnen 1 werkdag krijg je dagelijkse emails om 7 uur met je forecast.',
     'start.form.heading': 'Klaar? Laten we je op weg helpen.',
@@ -392,14 +394,13 @@ const translations = {
     'hero.trust': 'Sin tarjeta · Funciona con unTill + cualquier TPV',
 
     // Problem Section (Value Prop)
-    'problem.title': 'Tú lo sientes en tu restaurante. Nosotros lo contamos, plato a plato.',
-    'problem.intro': 'El tiempo no solo afecta al tráfico. Cambia lo que la gente pide. deitalite aprende tus patrones específicos y te envía una previsión cada mañana. Día a día. Plato a plato.',
-    'problem.cta': 'Ver cómo funciona',
+    'problem.title': 'Todos los restaurantes preparan de más. La pregunta es cuánto.',
+    'problem.intro': 'Unas raciones extra aquí, un lote que no se vende allá. Se acumula rápido. deitalite aprende tus patrones — tiempo, día de la semana, eventos locales — y te dice qué esperar antes de empezar a preparar.',
 
     // How It Works Section
     'how.title': 'Cómo funciona',
     'how.step1.title': 'Comparte tus datos de ventas',
-    'how.step1.text': 'Sincronización directa con unTill, o exporta desde cualquier otro TPV. 1-2 años de datos.',
+    'how.step1.text': 'Sincronización directa con unTill, o exporta desde cualquier otro TPV. 12 meses mínimo.',
     'how.step2.title': 'Construimos tu modelo',
     'how.step2.text': 'Previsiones basadas en TUS patrones, no promedios del sector.',
     'how.step3.title': 'Las previsiones llegan a diario',
@@ -426,7 +427,7 @@ const translations = {
     // ROI Section
     'roi.title': 'Las cuentas son simples',
     'roi.subtitle': 'Mejores decisiones de preparación ahorran dinero real. Menos mermas, menos roturas de stock, turnos más inteligentes.',
-    'roi.stat1.number': '300–600 €/mes',
+    'roi.stat1.number': '400–600 €/mes',
     'roi.stat1.title': 'menos mermas',
     'roi.stat1.text': 'Prepara lo que realmente venderás. Menos merma, menos sobrepedido. Con un gasto típico de 3.000 € en comida, es dinero real de vuelta.',
     'roi.stat2.number': 'Turnos inteligentes',
@@ -436,7 +437,7 @@ const translations = {
     'roi.stat3.title': 'en días fuertes',
     'roi.stat3.text': 'Anticipa cuándo necesitarás stock extra. Sin quedarte sin bestsellers cuando la terraza está llena.',
     'roi.exampleLabel': 'En resumen',
-    'roi.example': '¿Tiras 50 € en merma a la semana? Son 200 € al mes que podrías ahorrar. Pruébalo 14 días gratis.',
+    'roi.example': '¿Tiras 20 € en comida al día? Son 600 € al mes. Pruébalo 14 días gratis.',
 
     // Proof Section
     'proof.title': 'Lo que consultarás cada mañana',
@@ -450,6 +451,8 @@ const translations = {
     'proof.form.title': '¿Quieres ver un ejemplo real?',
     'proof.form.subtitle': 'Introduce tu email y te enviamos una previsión real — con el tiempo de hoy.',
     'proof.form.submit': 'Envíame un ejemplo',
+    'proof.form.success': '¡Revisa tu bandeja de entrada! Una previsión de ejemplo está en camino.',
+    'proof.form.error': 'Algo salió mal. Inténtalo de nuevo o escríbenos a info@deita.eu.',
     'proof.form.privacy': 'Sin spam, solo un email de muestra.',
 
     // Pricing Section
@@ -469,6 +472,8 @@ const translations = {
     'pricing.tier3.desc': 'Operación todo el día',
     'pricing.note': 'La mayoría de restaurantes eligen 2 servicios. Un email por servicio, listo para compartir con quien lleve ese turno.',
     'pricing.integration': 'Integración directa con',
+    'pricing.vat': 'Todos los precios son sin IVA.',
+    'pricing.regions': 'Trabajando con restaurantes en España y los Países Bajos',
     'pricing.cta': 'Empezar prueba gratis',
 
     // FAQ Section
@@ -476,7 +481,7 @@ const translations = {
     'faq.q1.question': '¿Qué sistemas TPV funcionan?',
     'faq.q1.answer': '<strong>Tenemos integración directa con unTill.</strong> Para otros sistemas (Lightspeed, Square, Toast, Zettle, etc.), exporta ventas a nivel de producto como CSV o Excel. Si puedes sacar un informe de ventas con fecha, nombre de artículo y cantidad, podemos usarlo.',
     'faq.q2.question': '¿Qué datos necesito?',
-    'faq.q2.answer': '<strong>1-2 años de datos de ventas.</strong> Mínimo 12 meses para capturar estacionalidad. 24 meses es aún mejor. Tu exportación debe incluir fecha, nombre del artículo y cantidad vendida.',
+    'faq.q2.answer': '<strong>12 meses de datos de ventas.</strong> Un año completo nos permite capturar patrones estacionales y darte previsiones precisas desde el primer día. Tu exportación debe incluir fecha, nombre del artículo y cantidad vendida.',
     'faq.q3.question': '¿Qué hago cada día realmente?',
     'faq.q3.answer': '<strong>Revisar email → ver cantidades → compartir con el equipo. 30 segundos.</strong> La mayoría de restaurantes consultan una vez al día o un par de veces por semana. Ves los próximos 7 días, ajustas prep, compras y turnos en consecuencia. Es una consulta rápida, no un sistema que gestionar.',
     'faq.q4.question': '¿Qué precisión tienen las previsiones?',
@@ -484,7 +489,7 @@ const translations = {
     'faq.q5.question': '¿Cuánto tarda la configuración?',
     'faq.q5.answer': '<strong>1 día laborable.</strong> Exportas y envías tus datos de ventas. Construimos tu previsión y empezamos a enviar emails diarios en un día laborable.',
     'faq.q6.question': '¿Subo datos cada mes?',
-    'faq.q6.answer': '<strong>Sí, si continúas.</strong> Después de 30 días, sube datos de ventas frescos para mantener tu previsión actualizada. El mismo proceso simple de exportación. Esto asegura que tu previsión refleje tendencias recientes y cambios de carta.',
+    'faq.q6.answer': '<strong>Una vez al mes, la misma exportación rápida.</strong> Esto mantiene tu previsión aprendiendo de tus últimos patrones de ventas y cambios de carta.',
     'faq.q7.question': '¿Y si mi carta cambió?',
     'faq.q7.answer': '<strong>Normal, lo manejamos.</strong> Cada plato necesita historial para prever bien. Platos nuevos funcionan pero son menos precisos hasta que acumulan datos de ventas. También podemos agrupar platos similares para que la previsión siga siendo útil para preparar.',
     'faq.q8.question': '¿Mis datos están seguros?',
@@ -495,8 +500,6 @@ const translations = {
     'faq.q10.answer': '<strong>Sí, las bebidas están incluidas.</strong> Hacemos previsiones de cualquier artículo en tus datos de ventas: comida, bebidas, postres, lo que registres.',
     'faq.q11.question': '¿Qué ubicaciones soportáis?',
     'faq.q11.answer': '<strong>Todo el mundo.</strong> Los datos meteorológicos se actualizan automáticamente con cobertura global. Los precios están en euros pero trabajamos con restaurantes en cualquier lugar.',
-    'faq.q12.question': '¿Os integraréis directamente con mi TPV?',
-    'faq.q12.answer': '<strong>Tenemos integración directa con unTill.</strong> Para otros sistemas TPV, exportas manualmente (unos clics). Más integraciones próximamente.',
 
     // Start Page
     'start.hero.title': 'Empieza tu prueba gratis',
@@ -506,16 +509,16 @@ const translations = {
     'start.what.title': 'Lo que obtienes',
     'start.what.item1': '<strong>Previsiones diarias:</strong> predicciones de demanda para los próximos 7 días, entregadas a las 7.',
     'start.what.item2': '<strong>Tiempo y eventos:</strong> previsiones ajustadas a lo que realmente afecta tu restaurante.',
-    'start.what.item3': '<strong>Desglose por servicio:</strong> previsiones separadas para comida, cena, o como operes.',
+    'start.what.item3': '<strong>Desglose por servicio:</strong> previsiones separadas para comida, cena, desayuno — los servicios que manejes.',
     'start.what.item4': '<strong>Entrega por email:</strong> sin app, sin dashboard. Solo revisa tu bandeja de entrada.',
     'start.need.title': 'Lo que necesitamos de ti',
-    'start.need.item1': '<strong>Datos de ventas:</strong> 1-2 años de ventas a nivel de producto (CSV o Excel). Te ayudamos a exportar.',
+    'start.need.item1': '<strong>Datos de ventas:</strong> 12 meses de ventas a nivel de producto (CSV o Excel). Te ayudamos a exportar.',
     'start.need.item2': '<strong>Tu ubicación:</strong> para conectar los datos correctos de tiempo y eventos.',
     'start.steps.title': 'Cómo funciona',
     'start.steps.step1.title': 'Regístrate abajo',
     'start.steps.step1.text': 'Cuéntanos sobre tu restaurante. Te enviaremos instrucciones de exportación para tu TPV.',
     'start.steps.step2.title': 'Comparte tus datos',
-    'start.steps.step2.text': 'Sube 1-2 años de datos de ventas. Construiremos tu modelo personalizado.',
+    'start.steps.step2.text': 'Sube tus datos de ventas. Construiremos tu modelo personalizado.',
     'start.steps.step3.title': 'Empieza a recibir previsiones',
     'start.steps.step3.text': 'En 1 día laborable, empezarás a recibir emails diarios a las 7 con tu previsión.',
     'start.form.heading': '¿Listo? Vamos a configurarlo.',
