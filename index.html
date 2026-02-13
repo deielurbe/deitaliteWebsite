@@ -23,7 +23,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/main.css">
@@ -214,7 +214,8 @@
   <section id="problem">
     <div class="container-narrow">
       <h2 data-i18n="problem.title">Every restaurant overpreps. The question is how much.</h2>
-      <p data-i18n="problem.intro">The margin between 'just right' and 'too much' is often just 5 or 10 portions. That's not a big number. But over a week, a month, a year — it adds up. deitalite learns your patterns and tells you what to expect before you start prepping.</p>
+      <div class="gold-rule"></div>
+      <p data-i18n="problem.intro">The margin between 'just right' and 'too much' is often just 5 or 10 portions. That's not a big number. But over a week, a month, a year, it adds up. deitalite learns your patterns and tells you what to expect before you start prepping.</p>
     </div>
   </section>
 
@@ -231,7 +232,7 @@
         <div class="step-card">
           <div class="step-number">2</div>
           <h3 data-i18n="how.step2.title">We learn your restaurant</h3>
-          <p data-i18n="how.step2.text">Your model captures how your specific restaurant responds to weather, day of week, holidays, and events. Recent months weigh more than older data — so when something changes, the forecast adapts within weeks.</p>
+          <p data-i18n="how.step2.text">Your model captures how your specific restaurant responds to weather, day of week, holidays, and events. Recent months weigh more than older data, so when something changes, the forecast adapts within weeks.</p>
         </div>
         <div class="step-card">
           <div class="step-number">3</div>
@@ -257,7 +258,7 @@
             </svg>
           </div>
           <h3 data-i18n="features.item1.title">Item-level quantities</h3>
-          <p data-i18n="features.item1.text">See how many of each dish to prepare: today, tomorrow, and the whole week ahead. No more "roughly 30 portions". Separate forecasts for lunch and dinner — because your morning prep and evening prep are different decisions.</p>
+          <p data-i18n="features.item1.text">See how many of each dish to prepare: today, tomorrow, and the whole week ahead. No more "roughly 30 portions". Separate forecasts for lunch and dinner, because your morning prep and evening prep are different decisions.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -266,7 +267,7 @@
             </svg>
           </div>
           <h3 data-i18n="features.item2.title">14-day rolling forecast</h3>
-          <p data-i18n="features.item2.text">14 days ahead, updated every morning. Days 1–7 with full weather detail. Days 8–14 blended with seasonal patterns — we show you when the forecast is less certain, because honest beats optimistic.</p>
+          <p data-i18n="features.item2.text">14 days ahead, updated every morning. Days 1–7 with full weather detail. Days 8–14 blended with seasonal patterns. We show you when the forecast is less certain, because honest beats optimistic.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -275,7 +276,7 @@
             </svg>
           </div>
           <h3 data-i18n="features.item3.title">Busy vs quiet highlights</h3>
-          <p data-i18n="features.item3.text">See when a day looks different from your typical Tuesday or Saturday. Dishes trending up or down over recent weeks get flagged — so you catch the shift before it catches you.</p>
+          <p data-i18n="features.item3.text">See when a day looks different from your typical Tuesday or Saturday. Dishes trending up or down over recent weeks get flagged, so you catch the shift before it catches you.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -284,7 +285,7 @@
             </svg>
           </div>
           <h3 data-i18n="features.item4.title">Weather, holidays & local events</h3>
-          <p data-i18n="features.item4.text">Not just 'is it raining?' — how disruptive. A drizzle barely changes the order. A storm keeps everyone home. And rain on a Sunday affects your restaurant differently than rain on a Tuesday. We model the combinations, not just the variables.</p>
+          <p data-i18n="features.item4.text">Not just 'is it raining?' but how disruptive. A drizzle barely changes the order. A storm keeps everyone home. And rain on a Sunday affects your restaurant differently than rain on a Tuesday. We model the combinations, not just the variables.</p>
         </div>
       </div>
       </div>
@@ -362,7 +363,7 @@
   <section id="proof">
     <div class="container">
       <h2 data-i18n="proof.title">What you'll check each morning</h2>
-      <p class="proof-subtitle" data-i18n="proof.subtitle">Your daily email shows item quantities for the next 14 days — updated with fresh weather data every morning.</p>
+      <p class="proof-subtitle" data-i18n="proof.subtitle">Your daily email shows item quantities for the next 14 days, updated with fresh weather data every morning.</p>
 
       <div class="proof-screenshot">
         <!-- Inline Email Mockup -->
@@ -544,14 +545,14 @@
         <div class="proof-callout">
           <div class="proof-callout-icon">📈</div>
           <h4 data-i18n="proof.callout3.title">Trends flagged automatically</h4>
-          <p data-i18n="proof.callout3.text">Your Caesar Salad outselling predictions for 4 weeks? That's not noise — that's a trend. We flag it so you adjust before waste catches up.</p>
+          <p data-i18n="proof.callout3.text">Your Caesar Salad outselling predictions for 4 weeks? That's not noise. That's a trend. We flag it so you adjust before waste catches up.</p>
         </div>
       </div>
 
       <!-- Demo email collection form -->
       <div class="demo-form-container">
         <p class="demo-form-title" data-i18n="proof.form.title">Want to see a live sample?</p>
-        <p class="demo-form-subtitle" data-i18n="proof.form.subtitle">Enter your email and we'll send you a real forecast — with today's weather.</p>
+        <p class="demo-form-subtitle" data-i18n="proof.form.subtitle">Enter your email and we'll send you a real forecast with today's weather.</p>
         <form
           id="demo-form"
           class="demo-form"
@@ -667,7 +668,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p data-i18n="faq.q4.answer"><strong>Typically within 15–20% of actual sales, 80% of the time</strong> (with 12 months of data). The goal isn't to hit exact numbers — it's to reduce waste, avoid stockouts, and spot unusual days before they happen. Every forecast includes a range (±) calibrated to your restaurant's variability. We'd rather be honest about uncertainty than pretend we're always right.</p>
+            <p data-i18n="faq.q4.answer"><strong>Typically within 15–20% of actual sales, 80% of the time</strong> (with 12 months of data). The goal isn't to hit exact numbers. It's to reduce waste, avoid stockouts, and spot unusual days before they happen. Every forecast includes a range (±) calibrated to your restaurant's variability. We'd rather be honest about uncertainty than pretend we're always right.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -694,7 +695,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p data-i18n="faq.q7.answer"><strong>Normal, we handle it.</strong> New dishes get a reasonable forecast immediately by inheriting your restaurant's overall patterns — they only need to learn their share of demand, not everything from scratch. Removed an item? Its forecast share redistributes automatically. The model adapts within weeks.</p>
+            <p data-i18n="faq.q7.answer"><strong>Normal, we handle it.</strong> New dishes get a reasonable forecast immediately by inheriting your restaurant's overall patterns. They only need to learn their share of demand, not everything from scratch. Removed an item? Its forecast share redistributes automatically. The model adapts within weeks.</p>
           </div>
         </div>
         <div class="faq-item">
