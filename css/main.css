@@ -1047,6 +1047,34 @@ section:nth-child(even) {
   margin-top: 2px;
 }
 
+/* Looking Ahead Section */
+.email-mockup .em-lookahead {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.email-mockup .em-la-week {
+  margin-bottom: 10px;
+}
+
+.email-mockup .em-la-week:last-child {
+  margin-bottom: 0;
+}
+
+.email-mockup .em-la-week-label {
+  font-size: 9px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.email-mockup .em-la-event {
+  font-size: 10px;
+  color: #475569;
+  margin-bottom: 2px;
+  padding-left: 3px;
+}
+
 /* Footer */
 .email-mockup .em-footer {
   padding: 12px;
