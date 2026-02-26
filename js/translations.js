@@ -9,19 +9,19 @@ const translations = {
     'nav.cta': 'Try free',
 
     // USP Banner
-    'usp.item1': 'Works with most POS exports',
+    'usp.item1': 'Works with unTill, Lightspeed, Square & more',
     'usp.item2': 'Ready in 1 business day',
     'usp.item3': 'Weather + holidays built in',
 
     // Hero Section
     'hero.title': 'Know what kind of day to expect, before you open',
-    'hero.subtitle': 'Daily demand forecasts for restaurants. Adjusted for weather, holidays, and events.',
+    'hero.subtitle': 'Daily sales forecasts for restaurants. Adjusted for weather, holidays, and events.',
     'hero.benefit1': 'Waste less. Prep what you\'ll actually sell.',
     'hero.benefit2': 'Staff for what\'s actually coming',
     'hero.benefit3': 'Just email. No app to learn.',
     'hero.cta': 'Try 14 days free',
     'hero.demo': 'See a sample',
-    'hero.trust': 'No card required · Works with unTill + any POS export',
+    'hero.trust': 'No card required · Built for restaurants in the Netherlands and Spain',
 
     // Problem Section (Value Prop)
     'problem.title': 'Every restaurant overpreps. The question is how much.',
@@ -137,7 +137,7 @@ const translations = {
     'start.hero.badge': '14 days free · No card required · Cancel anytime',
     'start.hero.back': 'Back to overview',
     'start.what.title': 'What you get',
-    'start.what.item1': '<strong>Daily forecasts:</strong> demand predictions for the week ahead, delivered at 7am.',
+    'start.what.item1': '<strong>Daily forecasts:</strong> sales predictions for the week ahead, delivered at 7am.',
     'start.what.item2': '<strong>Weather and events:</strong> forecasts adjusted for what actually affects your restaurant.',
     'start.what.item3': '<strong>Per-service breakdown:</strong> separate forecasts for lunch, dinner, breakfast, whatever services you run.',
     'start.what.item4': '<strong>Email delivery:</strong> no app, no dashboard. Just check your inbox.',
@@ -194,19 +194,19 @@ const translations = {
     'nav.cta': 'Probeer gratis',
 
     // USP Banner
-    'usp.item1': 'Werkt met de meeste kassasystemen',
+    'usp.item1': 'Werkt met unTill, Lightspeed, Square & meer',
     'usp.item2': 'Klaar binnen 1 werkdag',
     'usp.item3': 'Weer + feestdagen ingebouwd',
 
     // Hero Section
     'hero.title': 'Weet wat voor dag je kunt verwachten, voordat je opengaat',
-    'hero.subtitle': 'Dagelijkse vraagvoorspellingen voor restaurants. Aangepast aan weer, feestdagen en evenementen.',
+    'hero.subtitle': 'Dagelijkse verkoopvoorspellingen voor restaurants. Aangepast aan weer, feestdagen en evenementen.',
     'hero.benefit1': 'Verspil minder. Bereid wat je echt verkoopt.',
     'hero.benefit2': 'Plan personeel op wat er echt komt',
     'hero.benefit3': 'Alleen email. Geen app nodig.',
     'hero.cta': 'Probeer 14 dagen gratis',
     'hero.demo': 'Bekijk voorbeeld',
-    'hero.trust': 'Geen creditcard nodig · Werkt met unTill + elke kassa-export',
+    'hero.trust': 'Geen creditcard nodig · Gebouwd voor restaurants in Nederland en Spanje',
 
     // Problem Section (Value Prop)
     'problem.title': 'Elk restaurant prept te veel. De vraag is hoeveel.',
@@ -322,7 +322,7 @@ const translations = {
     'start.hero.badge': '14 dagen gratis · Geen creditcard · Altijd opzegbaar',
     'start.hero.back': 'Terug naar overzicht',
     'start.what.title': 'Wat je krijgt',
-    'start.what.item1': '<strong>Dagelijkse forecasts:</strong> vraagvoorspellingen voor de komende week, geleverd om 7 uur.',
+    'start.what.item1': '<strong>Dagelijkse forecasts:</strong> verkoopvoorspellingen voor de komende week, geleverd om 7 uur.',
     'start.what.item2': '<strong>Weer en evenementen:</strong> forecasts aangepast aan wat jouw restaurant beïnvloedt.',
     'start.what.item3': '<strong>Per-service overzicht:</strong> aparte forecasts voor lunch, diner, ontbijt, welke services je ook draait.',
     'start.what.item4': '<strong>Email bezorging:</strong> geen app, geen dashboard. Check gewoon je inbox.',
@@ -379,19 +379,19 @@ const translations = {
     'nav.cta': 'Prueba gratis',
 
     // USP Banner
-    'usp.item1': 'Funciona con la mayoría de TPV',
+    'usp.item1': 'Funciona con unTill, Lightspeed, Square y más',
     'usp.item2': 'Listo en 1 día laborable',
     'usp.item3': 'Tiempo + festivos incluidos',
 
     // Hero Section
     'hero.title': 'Sabe qué tipo de día esperar, antes de abrir',
-    'hero.subtitle': 'Previsiones de demanda diarias para restaurantes. Ajustadas al tiempo, festivos y eventos.',
+    'hero.subtitle': 'Previsiones de ventas diarias para restaurantes. Ajustadas al tiempo, festivos y eventos.',
     'hero.benefit1': 'Desperdicia menos. Prepara lo que realmente venderás.',
     'hero.benefit2': 'Ajusta turnos a lo que realmente viene',
     'hero.benefit3': 'Solo email. Sin app que aprender.',
     'hero.cta': 'Prueba 14 días gratis',
     'hero.demo': 'Ver ejemplo',
-    'hero.trust': 'Sin tarjeta · Funciona con unTill + cualquier TPV',
+    'hero.trust': 'Sin tarjeta · Hecho para restaurantes en los Países Bajos y España',
 
     // Problem Section (Value Prop)
     'problem.title': 'Todos los restaurantes preparan de más. La pregunta es cuánto.',
@@ -507,7 +507,7 @@ const translations = {
     'start.hero.badge': '14 días gratis · Sin tarjeta · Cancela cuando quieras',
     'start.hero.back': 'Volver al resumen',
     'start.what.title': 'Lo que obtienes',
-    'start.what.item1': '<strong>Previsiones diarias:</strong> predicciones de demanda para la semana entrante, entregadas a las 7.',
+    'start.what.item1': '<strong>Previsiones diarias:</strong> predicciones de ventas para la semana entrante, entregadas a las 7.',
     'start.what.item2': '<strong>Tiempo y eventos:</strong> previsiones ajustadas a lo que realmente afecta tu restaurante.',
     'start.what.item3': '<strong>Desglose por servicio:</strong> previsiones separadas para comida, cena, desayuno, los servicios que manejes.',
     'start.what.item4': '<strong>Entrega por email:</strong> sin app, sin dashboard. Solo revisa tu bandeja de entrada.',

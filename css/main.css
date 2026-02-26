@@ -696,28 +696,9 @@ section:nth-child(even) {
   margin: 0 auto;
 }
 
-/* Compact mockup for hero - with fade effect */
+/* Compact mockup for hero */
 .email-mockup-compact {
   position: relative;
-}
-
-.email-mockup-compact .email-card {
-  border-radius: 16px 16px 0 0;
-}
-
-.email-mockup-compact .em-fade-section {
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 100%);
-}
-
-.em-fade-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100px;
-  background: linear-gradient(to bottom, transparent 0%, var(--color-off-white) 100%);
-  pointer-events: none;
 }
 
 .email-mockup .email-card {
