@@ -3,93 +3,59 @@
 // ===================================
 
 const i18n = {
-  // Current language
   currentLang: 'en',
-
-  // Supported languages
   supportedLangs: ['en', 'nl', 'es'],
-
-  // Language names for display
   langNames: {
     en: 'English',
     nl: 'Nederlands',
     es: 'Español'
   },
 
-  // Initialize the i18n system
   init() {
-    // Get language from localStorage or browser (with fallback for private mode)
     const savedLang = this.getSavedLanguage();
     const browserLang = this.detectBrowserLanguage();
-
-    // Priority: savedLang > browserLang > default (en)
     const initialLang = savedLang || browserLang || 'en';
-
-    // Set the language
     this.setLanguage(initialLang);
-
-    // Setup language selector listeners
     this.setupLanguageSelector();
   },
 
-  // Get saved language from localStorage (handles private browsing mode)
   getSavedLanguage() {
     try {
       return localStorage.getItem('deitalite_lang');
     } catch (e) {
-      // localStorage not available (private mode or disabled)
       return null;
     }
   },
 
-  // Detect browser language
   detectBrowserLanguage() {
     const browserLang = navigator.language || navigator.userLanguage;
-
-    // Extract the main language code (e.g., 'en' from 'en-US')
     const langCode = browserLang.toLowerCase().split('-')[0];
-
-    // Check if we support this language
     if (this.supportedLangs.includes(langCode)) {
       return langCode;
     }
-
-    // Default to English if not supported
     return 'en';
   },
 
-  // Set the current language
   setLanguage(lang) {
-    // Validate language
     if (!this.supportedLangs.includes(lang)) {
       console.warn(`Language ${lang} not supported, falling back to English`);
       lang = 'en';
     }
 
-    // Update current language
     this.currentLang = lang;
 
-    // Save to localStorage (with fallback for private mode)
     try {
       localStorage.setItem('deitalite_lang', lang);
     } catch (e) {
-      // localStorage not available - language will reset on page reload
+      // localStorage not available
     }
 
-    // Update HTML lang attribute
     document.documentElement.lang = lang;
-
-    // Update all text content
     this.updateContent();
-
-    // Update language selector UI
     this.updateLanguageSelectorUI();
-
-    // Dispatch event for other scripts (e.g., Tally form switching)
     window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
   },
 
-  // Update all content on the page
   updateContent() {
     const lang = this.currentLang;
     const trans = translations[lang];
@@ -99,63 +65,115 @@ const i18n = {
       return;
     }
 
-    // Find all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(element => {
       const key = element.getAttribute('data-i18n');
       const translation = trans[key];
 
       if (translation) {
-        // Check if this is an input or textarea
         if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
           element.placeholder = translation;
         } else {
-          // Use innerHTML to preserve HTML tags in translations (e.g., <em>, <br>)
           element.innerHTML = translation;
         }
       }
     });
 
-    // Update HTML content (for elements with HTML inside)
     document.querySelectorAll('[data-i18n-html]').forEach(element => {
       const key = element.getAttribute('data-i18n-html');
       const translation = trans[key];
-
       if (translation) {
         element.innerHTML = translation;
       }
     });
   },
 
-  // Setup language selector event listeners
   setupLanguageSelector() {
     const selector = document.getElementById('language-selector');
+    if (!selector) return;
 
-    if (selector) {
-      selector.addEventListener('click', (e) => {
-        // Toggle dropdown
-        selector.classList.toggle('open');
+    const button = selector.querySelector('.lang-button');
+    const dropdown = selector.querySelector('.lang-dropdown');
+    const options = selector.querySelectorAll('.lang-option');
+
+    // Toggle dropdown on button click
+    if (button) {
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = selector.classList.contains('open');
+        this.toggleDropdown(selector, !isOpen);
+        if (!isOpen && options.length > 0) {
+          // Focus the active option when opening
+          const active = dropdown.querySelector('.lang-option.active') || options[0];
+          active.focus();
+        }
       });
 
-      // Add click handlers for each language option
-      document.querySelectorAll('.lang-option').forEach(option => {
-        option.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const lang = option.getAttribute('data-lang');
-          this.setLanguage(lang);
-          selector.classList.remove('open');
-        });
-      });
-
-      // Close dropdown when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!selector.contains(e.target)) {
-          selector.classList.remove('open');
+      // Keyboard support on button
+      button.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          this.toggleDropdown(selector, true);
+          const active = dropdown.querySelector('.lang-option.active') || options[0];
+          active.focus();
+        }
+        if (e.key === 'Escape') {
+          this.toggleDropdown(selector, false);
         }
       });
     }
+
+    // Option click and keyboard handlers
+    options.forEach((option, index) => {
+      option.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const lang = option.getAttribute('data-lang');
+        this.setLanguage(lang);
+        this.toggleDropdown(selector, false);
+        if (button) button.focus();
+      });
+
+      option.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          option.click();
+        }
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          const next = options[index + 1] || options[0];
+          next.focus();
+        }
+        if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          const prev = options[index - 1] || options[options.length - 1];
+          prev.focus();
+        }
+        if (e.key === 'Escape') {
+          this.toggleDropdown(selector, false);
+          if (button) button.focus();
+        }
+      });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!selector.contains(e.target)) {
+        this.toggleDropdown(selector, false);
+      }
+    });
   },
 
-  // Update the language selector UI to show current language
+  toggleDropdown(selector, open) {
+    const button = selector.querySelector('.lang-button');
+    if (open) {
+      selector.classList.add('open');
+    } else {
+      selector.classList.remove('open');
+    }
+    // Update all aria-expanded attributes
+    selector.setAttribute('aria-expanded', String(open));
+    if (button) button.setAttribute('aria-expanded', String(open));
+  },
+
   updateLanguageSelectorUI() {
     const currentLangElement = document.getElementById('current-lang');
 
@@ -163,19 +181,19 @@ const i18n = {
       currentLangElement.textContent = this.langNames[this.currentLang];
     }
 
-    // Update active state on options
     document.querySelectorAll('.lang-option').forEach(option => {
       const lang = option.getAttribute('data-lang');
       if (lang === this.currentLang) {
         option.classList.add('active');
+        option.setAttribute('aria-selected', 'true');
       } else {
         option.classList.remove('active');
+        option.setAttribute('aria-selected', 'false');
       }
     });
   }
 };
 
-// Initialize i18n when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => i18n.init());
 } else {

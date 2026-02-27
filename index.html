@@ -45,6 +45,19 @@
     "description": "Daily prep plan for restaurants, adjusted for weather and local events"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Which POS systems work?", "acceptedAnswer": {"@type": "Answer", "text": "We have direct integration with unTill. For other systems (Lightspeed, Square, Toast, Zettle, etc.), export item-level sales as Excel."}},
+      {"@type": "Question", "name": "What data do I need?", "acceptedAnswer": {"@type": "Answer", "text": "At least 1 year of sales data, ideally 2. More history lets us capture seasonality patterns. Your export should include date, item name, and quantity sold."}},
+      {"@type": "Question", "name": "How accurate are forecasts?", "acceptedAnswer": {"@type": "Answer", "text": "Typically within 15-20% of actual sales, 80% of the time (with 1-2 years of data). Every forecast includes a range calibrated to your restaurant's variability."}},
+      {"@type": "Question", "name": "How long does setup take?", "acceptedAnswer": {"@type": "Answer", "text": "1 business day. You export and send your sales data. We build your forecast and start sending daily emails within one business day."}},
+      {"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "€59-89/month depending on how many services you need. Start with a 14-day free trial, no card required."}}
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -56,15 +69,20 @@
         <!-- Secondary link: See a sample -->
         <a href="#proof" class="header-link" data-i18n="nav.sample">See a sample</a>
         <!-- Language Selector -->
-        <div id="language-selector" class="language-selector">
-          <span id="current-lang">English</span>
-          <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="14" height="14">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-          </svg>
-          <div class="lang-dropdown">
-            <div class="lang-option" data-lang="en">English</div>
-            <div class="lang-option" data-lang="nl">Nederlands</div>
-            <div class="lang-option" data-lang="es">Español</div>
+        <div id="language-selector" class="language-selector" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-label="Select language">
+          <button type="button" class="lang-button" aria-expanded="false" aria-haspopup="listbox">
+            <svg class="lang-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
+            </svg>
+            <span id="current-lang">English</span>
+            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="14" height="14" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+          </button>
+          <div class="lang-dropdown" role="listbox" aria-label="Languages">
+            <div class="lang-option" role="option" data-lang="en" tabindex="0">English</div>
+            <div class="lang-option" role="option" data-lang="nl" tabindex="0">Nederlands</div>
+            <div class="lang-option" role="option" data-lang="es" tabindex="0">Español</div>
           </div>
         </div>
         <a href="start.html" class="btn-primary" data-i18n="nav.cta">Try free</a>
@@ -232,12 +250,12 @@
         <div class="step-card">
           <div class="step-number">1</div>
           <h3 data-i18n="how.step1.title">Share your sales data</h3>
-          <p data-i18n="how.step1.text">Direct sync with unTill, or export from any other POS. 12 months minimum.</p>
+          <p data-i18n="how.step1.text">Direct sync with unTill, or export from any other POS. 1 year minimum, 2 years ideal.</p>
         </div>
         <div class="step-card">
           <div class="step-number">2</div>
           <h3 data-i18n="how.step2.title">We learn your restaurant</h3>
-          <p data-i18n="how.step2.text">Your model captures how your specific restaurant responds to weather, day of week, holidays, and events. Recent months weigh more than older data, so when something changes, the forecast adapts within weeks.</p>
+          <p data-i18n="how.step2.text">deitalite learns how your specific restaurant responds to weather, day of week, holidays, and events. Forecasts start from day one, built from your full sales history.</p>
         </div>
         <div class="step-card">
           <div class="step-number">3</div>
@@ -248,75 +266,68 @@
     </div>
   </section>
 
-  <!-- Section 4: What You Get Each Day (REWORKED - renamed from Features) -->
+  <!-- Section 4: What You Get Each Day -->
   <section id="features">
     <div class="container">
       <h2 data-i18n="features.title">What you get each day</h2>
 
-      <div class="feature-category">
-        <h3 class="category-title" data-i18n="features.category1.title">Your daily prep plan</h3>
-        <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-            </svg>
-          </div>
+      <!-- Features: 2x2 open grid -->
+      <div class="features-grid">
+        <div class="feature-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+          </svg>
           <h3 data-i18n="features.item1.title">Item-level quantities</h3>
-          <p data-i18n="features.item1.text">See how many of each dish to prepare: today, tomorrow, and the whole week ahead. No more "roughly 30 portions". Separate forecasts for lunch and dinner, because your morning prep and evening prep are different decisions.</p>
+          <p data-i18n="features.item1.text">How many of each dish to prepare: today, tomorrow, and every day this week. Separate forecasts for lunch and dinner.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
-            </svg>
-          </div>
+        <div class="feature-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+          </svg>
           <h3 data-i18n="features.item2.title">7-day forecast + 3-week outlook</h3>
-          <p data-i18n="features.item2.text">A full week of weather-based forecasts, updated every morning. Plus a 3-week calendar showing holidays, vacation periods, cruise arrivals, and bridge days so you can plan ahead.</p>
+          <p data-i18n="features.item2.text">Weather-adjusted forecasts every morning. Plus a 3-week calendar of holidays, events, and bridge days.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" />
-            </svg>
-          </div>
+        <div class="feature-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" />
+          </svg>
           <h3 data-i18n="features.item3.title">Busy vs quiet highlights</h3>
-          <p data-i18n="features.item3.text">See when a day looks different from your typical Tuesday or Saturday. Items that need more or less prep than usual are color-coded, so you spot the difference without reading every number.</p>
+          <p data-i18n="features.item3.text">Days that differ from your typical Tuesday or Saturday get flagged and color-coded.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 1.332-7.257 3 3 0 0 0-3.758-3.848 5.25 5.25 0 0 0-10.233 2.33A4.502 4.502 0 0 0 2.25 15Z" />
-            </svg>
-          </div>
-          <h3 data-i18n="features.item4.title">Weather, holidays & local events</h3>
-          <p data-i18n="features.item4.text">Not just 'is it raining?' but how disruptive. A drizzle barely changes the order. A storm keeps everyone home. And rain on a Sunday affects your restaurant differently than rain on a Tuesday. We model the combinations, not just the variables.</p>
+        <div class="feature-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 1.332-7.257 3 3 0 0 0-3.758-3.848 5.25 5.25 0 0 0-10.233 2.33A4.502 4.502 0 0 0 2.25 15Z" />
+          </svg>
+          <h3 data-i18n="features.item4.title">Weather, holidays & events</h3>
+          <p data-i18n="features.item4.text">A drizzle barely matters; a storm changes everything. We model how weather, holidays, and events combine to shift your demand.</p>
         </div>
-      </div>
       </div>
 
-      <div class="feature-category">
-        <h3 class="category-title" data-i18n="features.category2.title">Easy to use</h3>
-        <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
-            </svg>
-          </div>
-          <h3 data-i18n="features.item5.title">Download and share</h3>
-          <p data-i18n="features.item5.text">Export the week as CSV. Share with your kitchen, bar staff, or suppliers. Everyone can plan together.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
-            </svg>
-          </div>
-          <h3 data-i18n="features.item6.title">Try before you buy</h3>
-          <p data-i18n="features.item6.text">14 days free, no card required. See if it helps before committing.</p>
+      <!-- Callout: menu rotation (spans full width, different treatment) -->
+      <div class="feature-callout">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182M2.985 19.644l3.181-3.18" />
+        </svg>
+        <div class="feature-callout-text">
+          <strong data-i18n="features.item7.title">Works with rotating menus</strong>
+          <span data-i18n="features.item7.text">Changed your menu? New dishes get a forecast immediately. Your forecast already knows your restaurant's patterns and applies them to new items automatically.</span>
         </div>
       </div>
+
+      <!-- Extras: simple inline strip -->
+      <div class="features-extras">
+        <div class="feature-extra">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+          </svg>
+          <span data-i18n="features.item5.text">Excel file attached. Forward to kitchen, bar, or suppliers.</span>
+        </div>
+        <div class="feature-extra">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+          </svg>
+          <span data-i18n="features.item6.text">14 days free, no card required.</span>
+        </div>
       </div>
 
       <div class="section-cta">
@@ -333,7 +344,7 @@
       <div class="stats-grid">
         <div class="stat-card">
           <div class="stat-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
             </svg>
           </div>
@@ -342,7 +353,7 @@
         </div>
         <div class="stat-card">
           <div class="stat-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
             </svg>
           </div>
@@ -351,7 +362,7 @@
         </div>
         <div class="stat-card">
           <div class="stat-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
             </svg>
           </div>
@@ -574,9 +585,11 @@
           id="demo-form"
           class="demo-form"
         >
+          <label for="demo-email" class="sr-only">Email address</label>
           <input
             type="email"
             name="email"
+            id="demo-email"
             placeholder="your@email.com"
             required
             class="demo-form-input"
@@ -653,101 +666,101 @@
       <h2 data-i18n="faq.title">Questions</h2>
       <div class="faq-grid">
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-1-answer">
             <h3 data-i18n="faq.q1.question">Which POS systems work?</h3>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.q1.answer"><strong>We have direct integration with unTill.</strong> For other systems (Lightspeed, Square, Toast, Zettle, etc.), export item-level sales as CSV or Excel. If you can pull a sales report with date, item name, and quantity, we can use it.</p>
+          <div class="faq-answer" id="faq-1-answer" role="region" aria-labelledby="faq-1-q">
+            <p data-i18n="faq.q1.answer"><strong>We have direct integration with unTill.</strong> For other systems (Lightspeed, Square, Toast, Zettle, etc.), export item-level sales as Excel. If you can pull a sales report with date, item name, and quantity, we can use it.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-2-answer">
             <h3 data-i18n="faq.q2.question">What data do I need?</h3>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.q2.answer"><strong>12 months of sales data.</strong> A full year lets us capture seasonality patterns and give you accurate forecasts from day one. Your export should include date, item name, and quantity sold.</p>
+          <div class="faq-answer" id="faq-2-answer" role="region">
+            <p data-i18n="faq.q2.answer"><strong>At least 1 year of sales data, ideally 2.</strong> More history lets us capture seasonality patterns and give you more accurate forecasts from day one. Your export should include date, item name, and quantity sold.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-3-answer">
             <h3 data-i18n="faq.q3.question">What do I actually do each day?</h3>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-3-answer" role="region">
             <p data-i18n="faq.q3.answer"><strong>Check email → see quantities → share with team. 30 seconds.</strong> Most restaurants check once a day or a few times a week. You see the week ahead plus upcoming events, adjust prep/ordering/staffing accordingly. It's a quick check, not a system to manage.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-4-answer">
             <h3 data-i18n="faq.q4.question">How accurate are forecasts?</h3>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.q4.answer"><strong>Typically within 15–20% of actual sales, 80% of the time</strong> (with 12 months of data). The goal isn't to hit exact numbers. It's to reduce waste, avoid stockouts, and spot unusual days before they happen. Every forecast includes a range (±) calibrated to your restaurant's variability. We'd rather be honest about uncertainty than pretend we're always right.</p>
+          <div class="faq-answer" id="faq-4-answer" role="region">
+            <p data-i18n="faq.q4.answer"><strong>Typically within 15–20% of actual sales, 80% of the time</strong> (with 1-2 years of data). The goal isn't to hit exact numbers. It's to reduce waste, avoid stockouts, and spot unusual days before they happen. Every forecast includes a range (±) calibrated to your restaurant's variability. We'd rather be honest about uncertainty than pretend we're always right.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-5-answer">
             <h3 data-i18n="faq.q5.question">How long does setup take?</h3>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-5-answer" role="region">
             <p data-i18n="faq.q5.answer"><strong>1 business day.</strong> You export and send your sales data. We build your forecast and start sending daily emails within one business day.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-6-answer">
             <h3 data-i18n="faq.q6.question">Do I upload data every month?</h3>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.q6.answer"><strong>Once a month, same quick export.</strong> This keeps your forecast learning from your latest sales patterns and menu changes.</p>
+          <div class="faq-answer" id="faq-6-answer" role="region">
+            <p data-i18n="faq.q6.answer"><strong>Once a month, same quick export.</strong> We update your forecast with the latest data, so it always reflects your most recent sales and menu.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-7-answer">
             <h3 data-i18n="faq.q7.question">What if my menu changed?</h3>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.q7.answer"><strong>Normal, we handle it.</strong> New dishes get a reasonable forecast immediately by inheriting your restaurant's overall patterns. They only need to learn their share of demand, not everything from scratch. Removed an item? Its forecast share redistributes automatically. The model adapts within weeks.</p>
+          <div class="faq-answer" id="faq-7-answer" role="region">
+            <p data-i18n="faq.q7.answer"><strong>Normal, we handle it.</strong> New dishes get a reasonable forecast immediately by inheriting your restaurant's overall patterns. They only need to learn their share of demand, not everything from scratch. Removed an item? Its forecast share redistributes automatically. Next month's data rebuild sharpens everything further.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-8-answer">
             <h3 data-i18n="faq.q8.question">Is my data secure?</h3>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-8-answer" role="region">
             <p data-i18n="faq.q8.answer"><strong>Yes. Your data stays private and is never shared or sold.</strong> We store it securely, use it only to build your forecast, and delete it if you ask. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-9-answer">
             <h3 data-i18n="faq.q9.question">How much does it cost?</h3>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-9-answer" role="region">
             <p data-i18n="faq.q9.answer"><strong>€59-89/month</strong> depending on how many services you need (lunch, dinner, etc.). Start with a 14-day free trial, no card required.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-10-answer">
             <h3 data-i18n="faq.q10.question">What about drinks?</h3>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-10-answer" role="region">
             <p data-i18n="faq.q10.answer"><strong>Drinks count toward your daily totals</strong> (total transactions, busy/quiet classification), but the item-level prep table focuses on food. Drink menus tend to be large and sparse, making per-item forecasts unreliable. Your kitchen prep is what matters most.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-11-answer">
             <h3 data-i18n="faq.q11.question">Which locations do you support?</h3>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-11-answer" role="region">
             <p data-i18n="faq.q11.answer"><strong>Worldwide.</strong> Weather data updates automatically with global coverage. Pricing is in euros but we work with restaurants anywhere.</p>
           </div>
         </div>
@@ -797,6 +810,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- WhatsApp floating button -->
+  <a href="https://wa.me/31639227686" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
 
   <!-- Scripts -->
   <script src="js/translations.js"></script>

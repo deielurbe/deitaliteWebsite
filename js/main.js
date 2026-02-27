@@ -19,7 +19,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// 2. Fade-in on scroll animation (optional)
+// 2. Fade-in on scroll animation
 const observerOptions = {
   threshold: 0.1,
   rootMargin: '0px 0px -50px 0px'
@@ -34,15 +34,12 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Apply to sections with .animate class
 document.querySelectorAll('.animate').forEach(el => {
   observer.observe(el);
 });
 
 // 3. Track CTA clicks (for analytics)
-// This function works with both Google Analytics and Plausible Analytics
 function trackCTAClick(buttonText, section) {
-  // Google Analytics 4 (gtag)
   if (typeof gtag !== 'undefined') {
     gtag('event', 'cta_click', {
       'event_category': 'CTA',
@@ -51,7 +48,6 @@ function trackCTAClick(buttonText, section) {
     });
   }
 
-  // Plausible Analytics
   if (typeof plausible !== 'undefined') {
     plausible('CTA Click', {
       props: {
@@ -60,10 +56,8 @@ function trackCTAClick(buttonText, section) {
       }
     });
   }
-
 }
 
-// Attach tracking to all CTA buttons
 document.querySelectorAll('.btn-primary').forEach(btn => {
   btn.addEventListener('click', () => {
     const section = btn.closest('section')?.id || 'header';
@@ -71,16 +65,13 @@ document.querySelectorAll('.btn-primary').forEach(btn => {
   });
 });
 
-// 4. Scroll progress indicator (optional enhancement)
-// Shows how far user has scrolled down the page
+// 4. Scroll depth tracking
 function updateScrollProgress() {
   const windowHeight = window.innerHeight;
   const documentHeight = document.documentElement.scrollHeight - windowHeight;
   const scrolled = window.scrollY;
   const progress = (scrolled / documentHeight) * 100;
 
-  // You can use this progress value to show a progress bar
-  // For now, we'll just track it for analytics
   if (progress > 25 && !window.scrolled25) {
     window.scrolled25 = true;
     trackScrollDepth('25%');
@@ -100,7 +91,6 @@ function updateScrollProgress() {
 }
 
 function trackScrollDepth(depth) {
-  // Google Analytics 4
   if (typeof gtag !== 'undefined') {
     gtag('event', 'scroll_depth', {
       'event_category': 'Engagement',
@@ -108,7 +98,6 @@ function trackScrollDepth(depth) {
     });
   }
 
-  // Plausible Analytics
   if (typeof plausible !== 'undefined') {
     plausible('Scroll Depth', {
       props: { depth: depth }
@@ -116,7 +105,6 @@ function trackScrollDepth(depth) {
   }
 }
 
-// Throttle scroll events for performance
 let scrollTimeout;
 window.addEventListener('scroll', () => {
   if (scrollTimeout) {
@@ -127,27 +115,13 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// 5. Mobile menu toggle (if you add a hamburger menu later)
-// Currently not used, but ready for future implementation
-const mobileMenuButton = document.querySelector('.mobile-menu-button');
-const mobileMenu = document.querySelector('.mobile-menu');
-
-if (mobileMenuButton && mobileMenu) {
-  mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('open');
-    mobileMenuButton.classList.toggle('open');
-  });
-}
-
-// 6. Form validation (if you add contact form)
-// Example: validate email format before submission
+// 5. Email validation helper
 function validateEmail(email) {
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return re.test(email);
 }
 
-// 7. Lazy load images (optional performance optimization)
-// Already using loading="lazy" attribute in HTML, but this provides fallback
+// 6. Lazy load images (fallback for browsers without native lazy loading)
 if ('IntersectionObserver' in window) {
   const imageObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -167,7 +141,7 @@ if ('IntersectionObserver' in window) {
   });
 }
 
-// 8. Demo form inline submission
+// 7. Demo form inline submission
 const demoForm = document.getElementById('demo-form');
 if (demoForm) {
   demoForm.addEventListener('submit', function(e) {
@@ -199,30 +173,23 @@ if (demoForm) {
   });
 }
 
-// 9. FAQ Accordion Toggle
+// 8. FAQ Accordion with ARIA support
 document.querySelectorAll('.faq-question').forEach(button => {
   button.addEventListener('click', () => {
     const faqItem = button.parentElement;
     const isActive = faqItem.classList.contains('active');
 
-    // Close all other FAQ items (optional: remove these 3 lines for multi-open behavior)
+    // Close all other FAQ items
     document.querySelectorAll('.faq-item').forEach(item => {
       item.classList.remove('active');
+      const btn = item.querySelector('.faq-question');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
     });
 
     // Toggle current item
     if (!isActive) {
       faqItem.classList.add('active');
-    }
-  });
-});
-
-// 9. Keyboard accessibility for FAQ accordion
-document.querySelectorAll('.faq-question').forEach(button => {
-  button.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      button.click();
+      button.setAttribute('aria-expanded', 'true');
     }
   });
 });
