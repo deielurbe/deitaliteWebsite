@@ -162,11 +162,6 @@ const translations = {
     'start.faq.q3.question': 'How long until I can use it?',
     'start.faq.q3.answer': '1 business day after you upload your sales data. Most restaurants are checking their forecast by the next morning.',
 
-    // Cookie / consent banner
-    'cookie.message': 'We use cookies and Google Analytics to understand how visitors use deitalite and to improve the site. You can accept or decline analytics cookies. Read more in our <a href="privacy.html">Privacy Policy</a>.',
-    'cookie.accept': 'Accept',
-    'cookie.decline': 'Decline',
-
     // Final CTA Section
     'cta.title': 'Two weeks of forecasts, free.',
     'cta.subtitle': 'See if it\'s useful. No card, no commitment. You decide after 14 days.',
@@ -347,11 +342,6 @@ const translations = {
     'start.faq.q3.question': 'Hoe lang tot ik het kan gebruiken?',
     'start.faq.q3.answer': '1 werkdag nadat je je verkoopdata uploadt. De meeste restaurants checken hun forecast de volgende ochtend al.',
 
-    // Cookie / consent banner
-    'cookie.message': 'We gebruiken cookies en Google Analytics om te begrijpen hoe bezoekers deitalite gebruiken en om de site te verbeteren. Je kunt analysecookies accepteren of weigeren. Lees meer in ons <a href="privacy.html">Privacybeleid</a>.',
-    'cookie.accept': 'Accepteren',
-    'cookie.decline': 'Weigeren',
-
     // Final CTA Section
     'cta.title': 'Twee weken forecasts, gratis.',
     'cta.subtitle': 'Kijk of het nuttig is. Geen creditcard, geen verplichting. Jij beslist na 14 dagen.',
@@ -531,11 +521,6 @@ const translations = {
     'start.faq.q2.answer': '€59-89/mes dependiendo de cuántos servicios necesites. Los primeros 14 días son gratis, sin tarjeta.',
     'start.faq.q3.question': '¿Cuánto hasta que pueda usarlo?',
     'start.faq.q3.answer': '1 día laborable después de subir tus datos de ventas. La mayoría de restaurantes consultan su previsión a la mañana siguiente.',
-
-    // Cookie / consent banner
-    'cookie.message': 'Usamos cookies y Google Analytics para entender cómo los visitantes usan deitalite y mejorar el sitio. Puedes aceptar o rechazar las cookies de análisis. Más información en nuestra <a href="privacy.html">Política de Privacidad</a>.',
-    'cookie.accept': 'Aceptar',
-    'cookie.decline': 'Rechazar',
 
     // Final CTA Section
     'cta.title': 'Dos semanas de previsiones, gratis.',
