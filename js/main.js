@@ -141,37 +141,28 @@ if ('IntersectionObserver' in window) {
   });
 }
 
-// 7. Demo form inline submission
-const demoForm = document.getElementById('demo-form');
-if (demoForm) {
-  demoForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const formData = new FormData(demoForm);
-    const submitBtn = demoForm.querySelector('button[type="submit"]');
-    submitBtn.disabled = true;
-    submitBtn.textContent = '...';
+// 7. Demo Tally form embed (language-aware)
+const demoTallyForms = {
+  en: 'https://tally.so/embed/zxKQV8?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1',
+  nl: 'https://tally.so/embed/NpABGb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1',
+  es: 'https://tally.so/embed/aQBr7y?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1'
+};
 
-    fetch('https://formspree.io/f/mdanvlpg', {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    })
-    .then(function(response) {
-      if (response.ok) {
-        demoForm.style.display = 'none';
-        document.getElementById('demo-form-success').style.display = 'block';
-      } else {
-        document.getElementById('demo-form-error').style.display = 'block';
-        submitBtn.disabled = false;
-        submitBtn.textContent = demoForm.querySelector('button[type="submit"]')?.dataset?.originalText || 'Send me a sample';
-      }
-    })
-    .catch(function() {
-      document.getElementById('demo-form-error').style.display = 'block';
-      submitBtn.disabled = false;
-    });
-  });
+function updateDemoTallyForm(lang) {
+  const iframe = document.getElementById('demo-tally-form');
+  if (!iframe) return;
+  const formUrl = demoTallyForms[lang] || demoTallyForms.en;
+  iframe.setAttribute('data-tally-src', formUrl);
+  iframe.src = formUrl;
 }
+
+// Set initial form based on current language
+updateDemoTallyForm(document.documentElement.lang || 'en');
+
+// Update when language changes
+window.addEventListener('languageChanged', function(e) {
+  updateDemoTallyForm(e.detail.lang);
+});
 
 // 8. FAQ Accordion with ARIA support
 document.querySelectorAll('.faq-question').forEach(button => {

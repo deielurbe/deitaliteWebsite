@@ -29,6 +29,11 @@
       font-weight: 600;
       margin-bottom: 4px;
     }
+    .header .service {
+      color: rgba(255,255,255,0.7);
+      font-size: 11px;
+      margin-bottom: 2px;
+    }
     .header .date {
       color: rgba(255,255,255,0.85);
       font-size: 13px;
@@ -325,8 +330,9 @@
 
     <!-- Header -->
     <div class="header">
-      <h1>Bar Puerto</h1>
-      <div class="date">Friday, May 1, 2026</div>
+      <h1>Your restaurant</h1>
+      <div class="service">16:00 – 21:00</div>
+      <div class="date">Thursday, May 14, 2026</div>
     </div>
 
     <!-- 3-Day Forecast -->
@@ -337,42 +343,40 @@
         <!-- Today -->
         <div class="forecast-today">
           <div class="forecast-label">Today</div>
-          <div class="forecast-status">Busier</div>
-          <div class="forecast-amount">~55 ± 10 transactions</div>
-          <div class="forecast-pct">Above average (+32%)</div>
+          <div class="forecast-status">Normal</div>
+          <div class="forecast-amount">~27 ± 8 transactions</div>
+          <div class="forecast-pct">(+5%)</div>
           <div class="weather-row">
-            <span class="weather-icon">☀️</span>
-            <span>22-28°C</span>
-            <span class="rain-badge">No rain</span>
+            <span class="weather-icon">🌧️</span>
+            <span>10-15°C</span>
+            <span class="rain-badge" style="background:#dbeafe;color:#1e40af;">Moderate rain</span>
           </div>
           <div class="event-row">
-            🚢 4,500 cruise passengers
-          </div>
-          <div class="event-row">
-            🎉 International Workers Day
+            🎉 Hemelvaartsdag
           </div>
         </div>
 
         <!-- Tomorrow + Day After -->
         <div class="forecast-secondary">
           <div class="forecast-small">
-            <div class="forecast-label">Sat</div>
-            <div class="forecast-status">Normal</div>
-            <div class="forecast-pct">~47 ± 9 (+8%)</div>
+            <div class="forecast-label">Fri</div>
+            <div class="forecast-status" style="color:#166534;font-weight:700;">Much busier</div>
+            <div class="forecast-pct">~54 ± 11 (+58%)</div>
             <div class="weather-row">
               <span class="weather-icon">☀️</span>
-              <span>23-29°C</span>
-              <span class="rain-badge">No rain</span>
+              <span>14-20°C</span>
+              <span class="rain-badge">Mostly dry</span>
             </div>
+            <div class="event-row">🌉 Brugdag</div>
           </div>
           <div class="forecast-small">
-            <div class="forecast-label">Sun</div>
-            <div class="forecast-status">Normal</div>
-            <div class="forecast-pct">~39 ± 8 (-5%)</div>
+            <div class="forecast-label">Sat</div>
+            <div class="forecast-status" style="color:#166534;font-weight:700;">Busier</div>
+            <div class="forecast-pct">~52 ± 8 (+25%)</div>
             <div class="weather-row">
               <span class="weather-icon">⛅</span>
-              <span>21-27°C</span>
-              <span class="rain-badge">No rain</span>
+              <span>12-17°C</span>
+              <span class="rain-badge">Mostly dry</span>
             </div>
           </div>
         </div>
@@ -392,15 +396,20 @@
         <tr><td colspan="4" class="prep-category">Starters</td></tr>
         <tr class="prep-header">
           <td></td>
-          <td class="today-col">Fri</td>
+          <td class="today-col">Thu</td>
+          <td>Fri</td>
           <td>Sat</td>
-          <td>Sun</td>
         </tr>
         <tr class="prep-row">
           <td>Ceviche</td>
           <td>
+            <div class="cell-wrap">
+              <span class="qty-today qty-today-normal">6</span><span class="qty-range"> ±2</span>
+            </div>
+          </td>
+          <td>
             <div class="cell-wrap cell-up">
-              <span class="qty-today qty-today-up">14</span><span class="qty-range qty-today-up"> ±2</span>
+              <span class="qty-other qty-other-up">12</span><span class="qty-range-light"> ±2</span>
             </div>
           </td>
           <td>
@@ -408,17 +417,12 @@
               <span class="qty-other qty-other-normal">10</span><span class="qty-range-light"> ±2</span>
             </div>
           </td>
-          <td>
-            <div class="cell-wrap">
-              <span class="qty-other qty-other-normal">8</span><span class="qty-range-light"> ±2</span>
-            </div>
-          </td>
         </tr>
         <tr class="prep-row">
           <td>Caesar Salad</td>
           <td>
-            <div class="cell-wrap">
-              <span class="qty-today qty-today-normal">10</span><span class="qty-range"> ±2</span>
+            <div class="cell-wrap cell-down">
+              <span class="qty-today qty-today-down">3</span><span class="qty-range qty-today-down"> ±1</span>
             </div>
           </td>
           <td>
@@ -428,25 +432,25 @@
           </td>
           <td>
             <div class="cell-wrap">
-              <span class="qty-other qty-other-normal">6</span><span class="qty-range-light"> ±2</span>
+              <span class="qty-other qty-other-normal">7</span><span class="qty-range-light"> ±2</span>
             </div>
           </td>
         </tr>
         <tr class="prep-row">
           <td>Miso Soup</td>
           <td>
-            <div class="cell-wrap cell-down">
-              <span class="qty-today qty-today-down">5</span><span class="qty-range qty-today-down"> ±2</span>
+            <div class="cell-wrap cell-up">
+              <span class="qty-today qty-today-up">8</span><span class="qty-range qty-today-up"> ±3</span>
             </div>
           </td>
           <td>
             <div class="cell-wrap">
-              <span class="qty-other qty-other-normal">5</span><span class="qty-range-light"> ±2</span>
+              <span class="qty-other qty-other-normal">6</span><span class="qty-range-light"> ±2</span>
             </div>
           </td>
           <td>
             <div class="cell-wrap">
-              <span class="qty-other qty-other-normal">4</span><span class="qty-range-light"> ±1</span>
+              <span class="qty-other qty-other-normal">6</span><span class="qty-range-light"> ±2</span>
             </div>
           </td>
         </tr>
@@ -455,25 +459,25 @@
         <tr><td colspan="4" class="prep-category" style="padding-top:14px;">Mains</td></tr>
         <tr class="prep-header">
           <td></td>
-          <td class="today-col">Fri</td>
+          <td class="today-col">Thu</td>
+          <td>Fri</td>
           <td>Sat</td>
-          <td>Sun</td>
         </tr>
         <tr class="prep-row">
           <td>Poke Bowl</td>
           <td>
-            <div class="cell-wrap cell-up">
-              <span class="qty-today qty-today-up">20</span><span class="qty-range qty-today-up"> ±3</span>
+            <div class="cell-wrap">
+              <span class="qty-today qty-today-normal">9</span><span class="qty-range"> ±2</span>
             </div>
           </td>
           <td>
             <div class="cell-wrap cell-up">
-              <span class="qty-other qty-other-up">16</span><span class="qty-range-light"> ±3</span>
+              <span class="qty-other qty-other-up">18</span><span class="qty-range-light"> ±4</span>
             </div>
           </td>
           <td>
             <div class="cell-wrap">
-              <span class="qty-other qty-other-normal">12</span><span class="qty-range-light"> ±2</span>
+              <span class="qty-other qty-other-normal">14</span><span class="qty-range-light"> ±3</span>
             </div>
           </td>
         </tr>
@@ -481,17 +485,17 @@
           <td>Classic Burger</td>
           <td>
             <div class="cell-wrap">
-              <span class="qty-today qty-today-normal">18</span><span class="qty-range"> ±3</span>
+              <span class="qty-today qty-today-normal">7</span><span class="qty-range"> ±2</span>
             </div>
           </td>
           <td>
-            <div class="cell-wrap">
-              <span class="qty-other qty-other-normal">13</span><span class="qty-range-light"> ±2</span>
+            <div class="cell-wrap cell-up">
+              <span class="qty-other qty-other-up">15</span><span class="qty-range-light"> ±3</span>
             </div>
           </td>
           <td>
-            <div class="cell-wrap cell-down">
-              <span class="qty-other qty-other-down">9</span><span class="qty-range-light"> ±2</span>
+            <div class="cell-wrap cell-up">
+              <span class="qty-other qty-other-up">14</span><span class="qty-range-light"> ±3</span>
             </div>
           </td>
         </tr>
@@ -499,17 +503,17 @@
           <td>Fish and Chips</td>
           <td>
             <div class="cell-wrap">
-              <span class="qty-today qty-today-normal">14</span><span class="qty-range"> ±2</span>
-            </div>
-          </td>
-          <td>
-            <div class="cell-wrap cell-down">
-              <span class="qty-other qty-other-down">8</span><span class="qty-range-light"> ±2</span>
+              <span class="qty-today qty-today-normal">5</span><span class="qty-range"> ±2</span>
             </div>
           </td>
           <td>
             <div class="cell-wrap">
-              <span class="qty-other qty-other-normal">10</span><span class="qty-range-light"> ±2</span>
+              <span class="qty-other qty-other-normal">10</span><span class="qty-range-light"> ±3</span>
+            </div>
+          </td>
+          <td>
+            <div class="cell-wrap cell-up">
+              <span class="qty-other qty-other-up">11</span><span class="qty-range-light"> ±3</span>
             </div>
           </td>
         </tr>
@@ -518,33 +522,20 @@
         <tr><td colspan="4" class="prep-category" style="padding-top:14px;">Desserts</td></tr>
         <tr class="prep-header">
           <td></td>
-          <td class="today-col">Fri</td>
+          <td class="today-col">Thu</td>
+          <td>Fri</td>
           <td>Sat</td>
-          <td>Sun</td>
         </tr>
         <tr class="prep-row">
           <td>Chocolate Brownie</td>
           <td>
-            <div class="cell-wrap cell-up">
-              <span class="qty-today qty-today-up">11</span><span class="qty-range qty-today-up"> ±2</span>
+            <div class="cell-wrap">
+              <span class="qty-today qty-today-normal">4</span><span class="qty-range"> ±1</span>
             </div>
           </td>
           <td>
             <div class="cell-wrap">
-              <span class="qty-other qty-other-normal">8</span><span class="qty-range-light"> ±2</span>
-            </div>
-          </td>
-          <td>
-            <div class="cell-wrap cell-up">
-              <span class="qty-other qty-other-up">7</span><span class="qty-range-light"> ±2</span>
-            </div>
-          </td>
-        </tr>
-        <tr class="prep-row">
-          <td>Cheesecake</td>
-          <td>
-            <div class="cell-wrap">
-              <span class="qty-today qty-today-normal">8</span><span class="qty-range"> ±2</span>
+              <span class="qty-other qty-other-normal">7</span><span class="qty-range-light"> ±2</span>
             </div>
           </td>
           <td>
@@ -552,9 +543,22 @@
               <span class="qty-other qty-other-normal">6</span><span class="qty-range-light"> ±2</span>
             </div>
           </td>
+        </tr>
+        <tr class="prep-row">
+          <td>Cheesecake</td>
           <td>
-            <div class="cell-wrap cell-down">
-              <span class="qty-other qty-other-down">4</span><span class="qty-range-light"> ±1</span>
+            <div class="cell-wrap">
+              <span class="qty-today qty-today-normal">3</span><span class="qty-range"> ±1</span>
+            </div>
+          </td>
+          <td>
+            <div class="cell-wrap cell-up">
+              <span class="qty-other qty-other-up">8</span><span class="qty-range-light"> ±2</span>
+            </div>
+          </td>
+          <td>
+            <div class="cell-wrap">
+              <span class="qty-other qty-other-normal">5</span><span class="qty-range-light"> ±2</span>
             </div>
           </td>
         </tr>
@@ -563,36 +567,35 @@
 
     <!-- Week Outlook -->
     <div class="week-section">
-      <div class="section-title">Later This Week</div>
+      <div class="section-title">Coming Days</div>
       <div class="week-grid">
         <div class="week-day">
-          <div class="week-day-name">Mon</div>
+          <div class="week-day-name">Sun</div>
           <div class="week-weather">⛅</div>
-          <div class="week-temp">20-25°</div>
-          <div class="week-rain" style="background:#dcfce7;color:#166534;">No rain</div>
+          <div class="week-temp">11-16°</div>
+          <div class="week-rain" style="background:#f1f5f9;color:#64748b;">Mostly dry</div>
           <div class="week-pct normal">-8%</div>
         </div>
         <div class="week-day">
-          <div class="week-day-name">Tue</div>
+          <div class="week-day-name">Mon</div>
           <div class="week-weather">☀️</div>
-          <div class="week-temp">21-27°</div>
-          <div class="week-rain" style="background:#dcfce7;color:#166534;">No rain</div>
-          <div class="week-pct up">+25%</div>
-          <div class="week-event">🚢</div>
+          <div class="week-temp">13-18°</div>
+          <div class="week-rain" style="background:#f1f5f9;color:#64748b;">Mostly dry</div>
+          <div class="week-pct normal">+5%</div>
+        </div>
+        <div class="week-day">
+          <div class="week-day-name">Tue</div>
+          <div class="week-weather">🌧️</div>
+          <div class="week-temp">10-15°</div>
+          <div class="week-rain" style="background:#dbeafe;color:#1e40af;">Moderate rain</div>
+          <div class="week-pct down">-22%</div>
         </div>
         <div class="week-day">
           <div class="week-day-name">Wed</div>
-          <div class="week-weather">🌧️</div>
-          <div class="week-temp">17-22°</div>
-          <div class="week-rain" style="background:#fee2e2;color:#991b1b;">Rain</div>
-          <div class="week-pct down">-25%</div>
-        </div>
-        <div class="week-day">
-          <div class="week-day-name">Thu</div>
           <div class="week-weather">⛅</div>
-          <div class="week-temp">19-24°</div>
-          <div class="week-rain" style="background:#fef3c7;color:#92400e;">Showers</div>
-          <div class="week-pct down">-15%</div>
+          <div class="week-temp">12-17°</div>
+          <div class="week-rain" style="background:#f1f5f9;color:#64748b;">Mostly dry</div>
+          <div class="week-pct down">-12%</div>
         </div>
       </div>
     </div>

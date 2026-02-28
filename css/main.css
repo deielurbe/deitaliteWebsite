@@ -609,10 +609,20 @@ section:nth-child(even) {
   text-align: center;
 }
 
+.demo-form-prominent {
+  background: linear-gradient(135deg, #f0fdf4 0%, #e8f8ec 100%);
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  max-width: 540px;
+  margin: var(--spacing-xl) auto 0;
+}
+
 .demo-form-title {
   margin-bottom: var(--spacing-sm);
   color: var(--color-dark-text);
   font-weight: 600;
+  font-size: 1.15rem;
 }
 
 .demo-form-subtitle {
@@ -621,34 +631,9 @@ section:nth-child(even) {
   font-size: var(--font-size-small);
 }
 
-.demo-form {
-  display: flex;
-  gap: var(--spacing-sm);
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 500px;
+.demo-tally-wrap {
+  max-width: 480px;
   margin: 0 auto;
-}
-
-.demo-form-input {
-  flex: 1;
-  min-width: 250px;
-  padding: 14px 18px;
-  border: 2px solid var(--color-gray-light);
-  border-radius: var(--radius-md);
-  font-size: var(--font-size-body);
-  font-family: var(--font-family);
-}
-
-.demo-form-message {
-  text-align: center;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.demo-form-message p {
-  color: var(--color-brand-green);
-  font-weight: 600;
 }
 
 /* 7. USP Banner */
@@ -796,6 +781,12 @@ section:nth-child(even) {
   margin: 0 0 4px 0;
 }
 
+.email-mockup .em-header .em-service {
+  color: rgba(255,255,255,0.7);
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+
 .email-mockup .em-header .em-date {
   color: rgba(255,255,255,0.85);
   font-size: 12px;
@@ -824,6 +815,77 @@ section:nth-child(even) {
   background: linear-gradient(135deg, var(--em-green-bg) 0%, var(--em-green-bg-gradient) 100%);
   border-radius: 10px;
   padding: 14px;
+}
+
+.email-mockup .em-today.em-card-normal {
+  background: var(--em-slate-50);
+}
+
+.email-mockup .em-today.em-card-normal .em-label {
+  color: var(--em-slate-500);
+}
+
+.email-mockup .em-today.em-card-normal .em-status {
+  color: var(--em-slate-700);
+}
+
+.email-mockup .em-today.em-card-normal .em-amount,
+.email-mockup .em-today.em-card-normal .em-pct {
+  color: var(--em-slate-500);
+}
+
+.email-mockup .em-today.em-card-normal .em-weather {
+  color: var(--em-slate-500);
+}
+
+.email-mockup .em-today.em-card-normal .em-event {
+  color: var(--em-slate-500);
+}
+
+.email-mockup .em-small.em-card-much-busier {
+  background: linear-gradient(135deg, var(--em-green-bg) 0%, var(--em-green-bg-gradient) 100%);
+}
+
+.email-mockup .em-small.em-card-much-busier .em-label {
+  color: var(--em-green-text);
+}
+
+.email-mockup .em-small.em-card-much-busier .em-pct {
+  color: var(--em-green-text);
+}
+
+.email-mockup .em-small.em-card-much-busier .em-weather {
+  color: var(--em-green-text);
+}
+
+.email-mockup .em-small.em-card-much-busier .em-event {
+  color: var(--em-green-text);
+}
+
+.email-mockup .em-small.em-card-much-busier .em-rain-badge {
+  background: rgba(255,255,255,0.6);
+  color: var(--em-green-text);
+}
+
+.email-mockup .em-small.em-card-busier {
+  background: linear-gradient(135deg, #f0fdf4 0%, #e8f8ec 100%);
+}
+
+.email-mockup .em-small.em-card-busier .em-label {
+  color: var(--em-green-text);
+}
+
+.email-mockup .em-small.em-card-busier .em-pct {
+  color: var(--em-green-text);
+}
+
+.email-mockup .em-small.em-card-busier .em-weather {
+  color: var(--em-green-text);
+}
+
+.email-mockup .em-small.em-card-busier .em-rain-badge {
+  background: rgba(255,255,255,0.6);
+  color: var(--em-green-text);
 }
 
 .email-mockup .em-label {
@@ -923,6 +985,31 @@ section:nth-child(even) {
 .email-mockup .em-small .em-rain-badge {
   background: var(--em-slate-200);
   color: var(--em-slate-500);
+}
+
+.email-mockup .em-rain-badge-showers {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.email-mockup .em-rain-badge-rain {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.email-mockup .em-rain-badge-moderate {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.email-mockup .em-status-up {
+  color: #166534;
+  font-weight: 700;
+}
+
+.email-mockup .em-small .em-status-up {
+  color: #166534;
+  font-weight: 600;
 }
 
 /* Prep Section */
@@ -1207,6 +1294,25 @@ section:nth-child(even) {
   margin-bottom: 0;
 }
 
+.how-blocks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-2xl);
+  margin-top: var(--spacing-xl);
+}
+
+.how-block h3 {
+  font-family: var(--font-family-serif);
+  font-size: var(--font-size-h3);
+  color: var(--color-dark-text);
+  margin-bottom: var(--spacing-sm);
+}
+
+.how-block p {
+  color: var(--color-gray-medium);
+  line-height: 1.75;
+}
+
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1255,6 +1361,13 @@ section:nth-child(even) {
   background-color: var(--color-white);
 }
 
+.features-subtitle {
+  text-align: center;
+  color: var(--color-gray-medium);
+  margin-top: var(--spacing-sm);
+  margin-bottom: 0;
+}
+
 /* Features: 2-column grid with soft fills */
 .features-grid {
   display: grid;
@@ -1283,43 +1396,6 @@ section:nth-child(even) {
 }
 
 .feature-item p {
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--color-gray-medium);
-}
-
-/* Feature callout: full-width horizontal bar */
-.feature-callout {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--spacing-md);
-  margin-top: var(--spacing-md);
-  padding: var(--spacing-md) var(--spacing-lg);
-  background-color: var(--color-brand-green-light);
-  border-radius: var(--radius-md);
-  border-left: 3px solid var(--color-brand-green);
-}
-
-.feature-callout svg {
-  width: 22px;
-  height: 22px;
-  color: var(--color-brand-green);
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.feature-callout-text {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.feature-callout-text strong {
-  font-size: 1rem;
-  color: var(--color-dark-text);
-}
-
-.feature-callout-text span {
   font-size: 15px;
   line-height: 1.5;
   color: var(--color-gray-medium);
@@ -1795,7 +1871,8 @@ section:nth-child(even) {
     align-items: center;
   }
 
-  /* Steps: stack */
+  /* How-blocks and steps: stack */
+  .how-blocks,
   .steps-grid {
     grid-template-columns: 1fr;
   }
