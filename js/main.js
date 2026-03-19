@@ -164,7 +164,19 @@ window.addEventListener('languageChanged', function(e) {
   updateDemoTallyForm(e.detail.lang);
 });
 
-// 8. FAQ Accordion with ARIA support
+// 8. WhatsApp button: hidden until user scrolls (avoids covering hero text on mobile)
+(function() {
+  const wa = document.querySelector('.whatsapp-float');
+  if (!wa) return;
+  wa.classList.add('hidden-until-scroll');
+  function showWhatsApp() {
+    wa.classList.add('visible');
+    window.removeEventListener('scroll', showWhatsApp);
+  }
+  window.addEventListener('scroll', showWhatsApp, { passive: true });
+})();
+
+// 9. FAQ Accordion with ARIA support
 document.querySelectorAll('.faq-question').forEach(button => {
   button.addEventListener('click', () => {
     const faqItem = button.parentElement;

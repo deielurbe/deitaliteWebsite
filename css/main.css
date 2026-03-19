@@ -357,7 +357,18 @@ section:nth-child(even) {
   color: var(--color-white);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   z-index: 1000;
-  transition: transform var(--transition-normal) var(--ease-out-quart), box-shadow var(--transition-normal);
+  transition: transform var(--transition-normal) var(--ease-out-quart), box-shadow var(--transition-normal), opacity 0.3s ease;
+}
+
+/* Hidden until user scrolls (JS adds .visible) */
+.whatsapp-float.hidden-until-scroll {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.whatsapp-float.hidden-until-scroll.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .whatsapp-float svg {
@@ -429,6 +440,29 @@ section:nth-child(even) {
 @media (max-width: 768px) {
   .start-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* === Start page mobile: surface the form fast === */
+
+  /* Hide "Back to overview" button — just takes space */
+  .header-right .btn-secondary {
+    display: none;
+  }
+
+  /* Tighten start hero padding */
+  #start-hero {
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+  }
+
+  /* Collapse info cards on mobile — visitor already read this on homepage */
+  #start-what-you-get {
+    display: none;
+  }
+
+  /* Tighten steps section */
+  #start-steps {
+    padding-top: var(--spacing-md);
   }
 }
 
@@ -1971,6 +2005,42 @@ section:nth-child(even) {
   /* Proof section callouts mobile */
   #proof .proof-callouts {
     grid-template-columns: 1fr;
+  }
+
+  /* === Mobile above-the-fold optimization === */
+
+  /* Hide USP banner on mobile — secondary info, not what converts cold traffic */
+  #usp-banner {
+    display: none;
+  }
+
+  /* Hide header CTA on mobile — hero CTA does this job */
+  .header-right .btn-primary {
+    display: none;
+  }
+
+  /* Tighten hero padding so headline is immediately visible */
+  #hero {
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-xl);
+  }
+
+  /* Hide email mockup on mobile hero — it appears again in #proof section */
+  .hero-visual {
+    display: none;
+  }
+
+  /* Tighten hero content spacing for above-the-fold fit */
+  .hero-content h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .hero-subheadline {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .hero-benefits {
+    margin: var(--spacing-md) 0;
   }
 }
 
