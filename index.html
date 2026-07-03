@@ -51,8 +51,8 @@
     "@type": "FAQPage",
     "mainEntity": [
       {"@type": "Question", "name": "Which POS systems work?", "acceptedAnswer": {"@type": "Answer", "text": "We have direct integration with unTill. For other systems (Lightspeed, Square, Toast, Zettle, etc.), export item-level sales as Excel."}},
-      {"@type": "Question", "name": "What data do I need?", "acceptedAnswer": {"@type": "Answer", "text": "At least 1 year of sales data, ideally 2. More history lets us capture seasonality patterns. Your export should include date, item name, and quantity sold."}},
-      {"@type": "Question", "name": "How accurate are forecasts?", "acceptedAnswer": {"@type": "Answer", "text": "Typically within 15-20% of actual sales, 80% of the time (with 1-2 years of data). Every forecast includes a range calibrated to your restaurant's variability."}},
+      {"@type": "Question", "name": "What data do I need?", "acceptedAnswer": {"@type": "Answer", "text": "The more history, the better. A full year covers all seasons; two years is sharpest. Less than a year still works: you get forecasts from day one, and the forecast catches up on seasons it has not seen yet as they come in. Your export should include the date, what was sold, and how many."}},
+      {"@type": "Question", "name": "How accurate are forecasts?", "acceptedAnswer": {"@type": "Answer", "text": "Honest enough to plan by. Every forecast shows a number plus a range: plan for 12, and a normal day lands between 8 and 16. About 7 days out of 10, actual sales land inside that range, and the range is sized to how much your sales actually vary. The goal isn't to hit exact numbers. It's to reduce waste, avoid running out, and spot unusual days before they happen."}},
       {"@type": "Question", "name": "How long does setup take?", "acceptedAnswer": {"@type": "Answer", "text": "1 business day. You export and send your sales data. We build your forecast and start sending daily emails within one business day."}},
       {"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "€59-89/month depending on how many services you need. Start with a 14-day free trial, no card required."}}
     ]
@@ -142,7 +142,7 @@
                 <div class="em-today em-card-normal">
                   <div class="em-label">Today</div>
                   <div class="em-status">Normal</div>
-                  <div class="em-amount">~27 ± 8 transactions</div>
+                  <div class="em-amount">27 (19–35) transactions</div>
                   <div class="em-pct">(+5%)</div>
                   <div class="em-weather">
                     <span class="em-weather-icon">🌧️</span>
@@ -155,7 +155,7 @@
                   <div class="em-small em-card-much-busier">
                     <div class="em-label">Fri</div>
                     <div class="em-status em-status-up">Much busier</div>
-                    <div class="em-pct">~54 ± 11 (+58%)</div>
+                    <div class="em-pct">54 (43–65) (+58%)</div>
                     <div class="em-weather">
                       <span class="em-weather-icon">☀️</span>
                       <span>14-20°C</span>
@@ -166,7 +166,7 @@
                   <div class="em-small em-card-busier">
                     <div class="em-label">Sat</div>
                     <div class="em-status em-status-up">Busier</div>
-                    <div class="em-pct">~52 ± 8 (+25%)</div>
+                    <div class="em-pct">52 (44–60) (+25%)</div>
                     <div class="em-weather">
                       <span class="em-weather-icon">⛅</span>
                       <span>12-17°C</span>
@@ -191,21 +191,21 @@
                 </tr>
                 <tr class="em-row">
                   <td>Ceviche</td>
-                  <td><div class="em-cell"><span class="em-qty em-qty-normal">6</span><span class="em-range"> ±2</span></div></td>
-                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">12</span><span class="em-range-light"> ±2</span></div></td>
-                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">10</span><span class="em-range-light"> ±2</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty em-qty-normal">6</span><span class="em-range"> 4–8</span></div></td>
+                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">12</span><span class="em-range-light"> 10–14</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">10</span><span class="em-range-light"> 8–12</span></div></td>
                 </tr>
                 <tr class="em-row">
                   <td>Caesar Salad</td>
-                  <td><div class="em-cell em-cell-down"><span class="em-qty em-qty-down">3</span><span class="em-range em-qty-down"> ±1</span></div></td>
-                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">9</span><span class="em-range-light"> ±2</span></div></td>
-                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">7</span><span class="em-range-light"> ±2</span></div></td>
+                  <td><div class="em-cell em-cell-down"><span class="em-qty em-qty-down">3</span><span class="em-range em-qty-down"> 2–4</span></div></td>
+                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">9</span><span class="em-range-light"> 7–11</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">7</span><span class="em-range-light"> 5–9</span></div></td>
                 </tr>
                 <tr class="em-row">
                   <td>Miso Soup</td>
-                  <td><div class="em-cell em-cell-up"><span class="em-qty em-qty-up">8</span><span class="em-range em-qty-up"> ±3</span></div></td>
-                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">6</span><span class="em-range-light"> ±2</span></div></td>
-                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">6</span><span class="em-range-light"> ±2</span></div></td>
+                  <td><div class="em-cell em-cell-up"><span class="em-qty em-qty-up">8</span><span class="em-range em-qty-up"> 5–11</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">6</span><span class="em-range-light"> 4–8</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">6</span><span class="em-range-light"> 4–8</span></div></td>
                 </tr>
                 <tr><td colspan="4" class="em-cat" style="padding-top:12px;">Mains</td></tr>
                 <tr class="em-thead">
@@ -216,15 +216,15 @@
                 </tr>
                 <tr class="em-row">
                   <td>Poke Bowl</td>
-                  <td><div class="em-cell"><span class="em-qty em-qty-normal">9</span><span class="em-range"> ±2</span></div></td>
-                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">18</span><span class="em-range-light"> ±4</span></div></td>
-                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">14</span><span class="em-range-light"> ±3</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty em-qty-normal">9</span><span class="em-range"> 7–11</span></div></td>
+                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">18</span><span class="em-range-light"> 14–22</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">14</span><span class="em-range-light"> 11–17</span></div></td>
                 </tr>
                 <tr class="em-row">
                   <td>Classic Burger</td>
-                  <td><div class="em-cell"><span class="em-qty em-qty-normal">7</span><span class="em-range"> ±2</span></div></td>
-                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">15</span><span class="em-range-light"> ±3</span></div></td>
-                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">14</span><span class="em-range-light"> ±3</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty em-qty-normal">7</span><span class="em-range"> 5–9</span></div></td>
+                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">15</span><span class="em-range-light"> 12–18</span></div></td>
+                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">14</span><span class="em-range-light"> 11–17</span></div></td>
                 </tr>
               </table>
             </div>
@@ -322,7 +322,7 @@
                 <div class="em-today em-card-normal">
                   <div class="em-label">Today</div>
                   <div class="em-status">Normal</div>
-                  <div class="em-amount">~27 ± 8 transactions</div>
+                  <div class="em-amount">27 (19–35) transactions</div>
                   <div class="em-pct">(+5%)</div>
                   <div class="em-weather">
                     <span class="em-weather-icon">🌧️</span>
@@ -335,7 +335,7 @@
                   <div class="em-small em-card-much-busier">
                     <div class="em-label">Fri</div>
                     <div class="em-status em-status-up">Much busier</div>
-                    <div class="em-pct">~54 ± 11 (+58%)</div>
+                    <div class="em-pct">54 (43–65) (+58%)</div>
                     <div class="em-weather">
                       <span class="em-weather-icon">☀️</span>
                       <span>14-20°C</span>
@@ -346,7 +346,7 @@
                   <div class="em-small em-card-busier">
                     <div class="em-label">Sat</div>
                     <div class="em-status em-status-up">Busier</div>
-                    <div class="em-pct">~52 ± 8 (+25%)</div>
+                    <div class="em-pct">52 (44–60) (+25%)</div>
                     <div class="em-weather">
                       <span class="em-weather-icon">⛅</span>
                       <span>12-17°C</span>
@@ -371,21 +371,21 @@
                 </tr>
                 <tr class="em-row">
                   <td>Ceviche</td>
-                  <td><div class="em-cell"><span class="em-qty em-qty-normal">6</span><span class="em-range"> ±2</span></div></td>
-                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">12</span><span class="em-range-light"> ±2</span></div></td>
-                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">10</span><span class="em-range-light"> ±2</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty em-qty-normal">6</span><span class="em-range"> 4–8</span></div></td>
+                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">12</span><span class="em-range-light"> 10–14</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">10</span><span class="em-range-light"> 8–12</span></div></td>
                 </tr>
                 <tr class="em-row">
                   <td>Caesar Salad</td>
-                  <td><div class="em-cell em-cell-down"><span class="em-qty em-qty-down">3</span><span class="em-range em-qty-down"> ±1</span></div></td>
-                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">9</span><span class="em-range-light"> ±2</span></div></td>
-                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">7</span><span class="em-range-light"> ±2</span></div></td>
+                  <td><div class="em-cell em-cell-down"><span class="em-qty em-qty-down">3</span><span class="em-range em-qty-down"> 2–4</span></div></td>
+                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">9</span><span class="em-range-light"> 7–11</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">7</span><span class="em-range-light"> 5–9</span></div></td>
                 </tr>
                 <tr class="em-row">
                   <td>Miso Soup</td>
-                  <td><div class="em-cell em-cell-up"><span class="em-qty em-qty-up">8</span><span class="em-range em-qty-up"> ±3</span></div></td>
-                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">6</span><span class="em-range-light"> ±2</span></div></td>
-                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">6</span><span class="em-range-light"> ±2</span></div></td>
+                  <td><div class="em-cell em-cell-up"><span class="em-qty em-qty-up">8</span><span class="em-range em-qty-up"> 5–11</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">6</span><span class="em-range-light"> 4–8</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">6</span><span class="em-range-light"> 4–8</span></div></td>
                 </tr>
                 <tr><td colspan="4" class="em-cat" style="padding-top:12px;">Mains</td></tr>
                 <tr class="em-thead">
@@ -396,21 +396,21 @@
                 </tr>
                 <tr class="em-row">
                   <td>Poke Bowl</td>
-                  <td><div class="em-cell"><span class="em-qty em-qty-normal">9</span><span class="em-range"> ±2</span></div></td>
-                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">18</span><span class="em-range-light"> ±4</span></div></td>
-                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">14</span><span class="em-range-light"> ±3</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty em-qty-normal">9</span><span class="em-range"> 7–11</span></div></td>
+                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">18</span><span class="em-range-light"> 14–22</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">14</span><span class="em-range-light"> 11–17</span></div></td>
                 </tr>
                 <tr class="em-row">
                   <td>Classic Burger</td>
-                  <td><div class="em-cell"><span class="em-qty em-qty-normal">7</span><span class="em-range"> ±2</span></div></td>
-                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">15</span><span class="em-range-light"> ±3</span></div></td>
-                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">14</span><span class="em-range-light"> ±3</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty em-qty-normal">7</span><span class="em-range"> 5–9</span></div></td>
+                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">15</span><span class="em-range-light"> 12–18</span></div></td>
+                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">14</span><span class="em-range-light"> 11–17</span></div></td>
                 </tr>
                 <tr class="em-row">
                   <td>Fish and Chips</td>
-                  <td><div class="em-cell"><span class="em-qty em-qty-normal">5</span><span class="em-range"> ±2</span></div></td>
-                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">10</span><span class="em-range-light"> ±3</span></div></td>
-                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">11</span><span class="em-range-light"> ±3</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty em-qty-normal">5</span><span class="em-range"> 3–7</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">10</span><span class="em-range-light"> 7–13</span></div></td>
+                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">11</span><span class="em-range-light"> 8–14</span></div></td>
                 </tr>
                 <tr><td colspan="4" class="em-cat" style="padding-top:12px;">Desserts</td></tr>
                 <tr class="em-thead">
@@ -421,15 +421,15 @@
                 </tr>
                 <tr class="em-row">
                   <td>Chocolate Brownie</td>
-                  <td><div class="em-cell"><span class="em-qty em-qty-normal">4</span><span class="em-range"> ±1</span></div></td>
-                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">7</span><span class="em-range-light"> ±2</span></div></td>
-                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">6</span><span class="em-range-light"> ±2</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty em-qty-normal">4</span><span class="em-range"> 3–5</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">7</span><span class="em-range-light"> 5–9</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">6</span><span class="em-range-light"> 4–8</span></div></td>
                 </tr>
                 <tr class="em-row">
                   <td>Cheesecake</td>
-                  <td><div class="em-cell"><span class="em-qty em-qty-normal">3</span><span class="em-range"> ±1</span></div></td>
-                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">8</span><span class="em-range-light"> ±2</span></div></td>
-                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">5</span><span class="em-range-light"> ±2</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty em-qty-normal">3</span><span class="em-range"> 2–4</span></div></td>
+                  <td><div class="em-cell em-cell-up"><span class="em-qty-other em-qty-other-up">8</span><span class="em-range-light"> 6–10</span></div></td>
+                  <td><div class="em-cell"><span class="em-qty-other em-qty-other-normal">5</span><span class="em-range-light"> 3–7</span></div></td>
                 </tr>
               </table>
             </div>
@@ -484,7 +484,7 @@
         <div class="proof-callout">
           <div class="proof-callout-icon">🎯</div>
           <h4 data-i18n="proof.callout1.title">Your ranges, not averages</h4>
-          <p data-i18n="proof.callout1.text">The ± on your forecast isn't generic. It's calibrated from your restaurant's actual variability. A predictable lunch spot gets tight ranges. A volatile weekend bar gets wider ones.</p>
+          <p data-i18n="proof.callout1.text">The ranges on your forecast aren't one-size-fits-all. They come from your restaurant's own sales. A steady lunch spot gets narrow ranges. A busy weekend bar gets wider ones.</p>
         </div>
         <div class="proof-callout">
           <div class="proof-callout-icon">🧩</div>
@@ -628,7 +628,7 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer" id="faq-2-answer" role="region">
-            <p data-i18n="faq.q2.answer"><strong>At least 1 year of sales data, ideally 2.</strong> More history lets us capture seasonality patterns and give you more accurate forecasts from day one. Your export should include date, item name, and quantity sold.</p>
+            <p data-i18n="faq.q2.answer"><strong>The more history, the better.</strong> A full year covers all seasons; two years is sharpest. Less than a year still works: you get forecasts from day one, and the forecast catches up on seasons it has not seen yet as they come in. Your export should include the date, what was sold, and how many.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -646,7 +646,7 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer" id="faq-4-answer" role="region">
-            <p data-i18n="faq.q4.answer"><strong>Typically within 15–20% of actual sales, 80% of the time</strong> (with 1-2 years of data). The goal isn't to hit exact numbers. It's to reduce waste, avoid stockouts, and spot unusual days before they happen. Every forecast includes a range (±) calibrated to your restaurant's variability. We'd rather be honest about uncertainty than pretend we're always right.</p>
+            <p data-i18n="faq.q4.answer"><strong>Honest enough to plan by.</strong> Every forecast shows a number plus a range: plan for 12, and a normal day lands between 8 and 16. About 7 days out of 10, actual sales land inside that range, and the range is sized to how much your sales actually vary. The goal isn't to hit exact numbers. It's to reduce waste, avoid running out, and spot unusual days before they happen. We'd rather give you a realistic range than pretend we can nail it every time.</p>
           </div>
         </div>
         <div class="faq-item">
