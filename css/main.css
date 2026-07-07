@@ -1579,7 +1579,7 @@ section + #final-cta,
   text-align: center;
   font-family: var(--font-family-mono);
   font-size: var(--font-size-small);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-gray-medium);
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -1808,6 +1808,7 @@ section + #final-cta,
 #final-cta .btn-primary {
   background-color: var(--color-white);
   color: var(--color-brand-green);
+  border-color: var(--color-white);
   margin: var(--spacing-md) 0;
 }
 
