@@ -281,17 +281,37 @@ section + #final-cta,
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--color-brand-green);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  font-family: var(--font-family-serif);
+  font-optical-sizing: auto;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-dark-text);
+  line-height: 1;
+  transition: color var(--transition-fast);
 }
 
-.logo-icon {
-  height: 42px;
-  width: auto;
+/* Family signature: the brand-green full stop (matches deita.eu) */
+.logo::after {
+  content: ".";
+  color: var(--color-brand-green);
+}
+
+.logo:hover {
+  color: var(--color-brand-green);
+}
+
+.footer-wordmark {
+  font-family: var(--font-family-serif);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+}
+
+.footer-wordmark::after {
+  content: ".";
+  color: var(--color-brand-green);
 }
 
 /* 6.5. Header Right Section (Language + CTA) */
