@@ -52,7 +52,6 @@
   --color-dark-text: #1C1917;
   --color-gray-medium: #57534E;
   --color-gray-light: #E7E0D5;
-  --color-footer-dark: #2c3e50;   /* still used by #footer + partner pages; Task 6 deletes it */
 
   /* Email mockup palette */
   --em-green-bg: #dcfce7;
@@ -1823,8 +1822,9 @@ section + #final-cta,
 
 /* 15. Footer */
 #footer {
-  background-color: var(--color-footer-dark);
-  color: var(--color-white);
+  background-color: transparent;
+  border-top: 1px solid var(--color-hairline);
+  color: var(--color-dark-text);
   padding: var(--spacing-xl) 0;
 }
 
@@ -1836,9 +1836,17 @@ section + #final-cta,
 }
 
 .footer-col h4 {
-  color: var(--color-white);
+  color: var(--color-dark-text);
   margin-bottom: var(--spacing-sm);
-  font-size: var(--font-size-body);
+}
+
+.footer-col h4:not(.footer-wordmark) {
+  font-family: var(--font-family-mono);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-gray-medium);
 }
 
 .footer-col ul li {
@@ -1846,18 +1854,28 @@ section + #final-cta,
 }
 
 .footer-col a {
-  color: var(--color-white);
-  opacity: 0.8;
-  transition: opacity var(--transition-fast);
+  color: var(--color-gray-medium);
+  transition: color var(--transition-fast);
 }
 
 .footer-col a:hover {
-  opacity: 1;
+  color: var(--color-brand-green);
+}
+
+.footer-col p {
+  color: var(--color-gray-medium);
+}
+
+.footer-col p a {
+  color: var(--color-brand-green);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 .footer-note {
   font-size: var(--font-size-small);
-  opacity: 0.8;
+  color: var(--color-gray-medium);
   margin-top: var(--spacing-xs);
 }
 
@@ -1865,29 +1883,22 @@ section + #final-cta,
   text-align: center;
   padding: var(--spacing-xl) 0 var(--spacing-lg) 0;
   margin-top: var(--spacing-lg);
-  border-top: 1px solid rgba(255,255,255,0.2);
+  border-top: 1px solid var(--color-hairline);
 }
 
 .footer-cta h3 {
-  color: var(--color-white);
+  color: var(--color-dark-text);
   margin-bottom: var(--spacing-md);
   font-size: var(--font-size-h3);
-}
-
-.footer-cta .btn-primary {
-  background-color: var(--color-white);
-  color: var(--color-footer-dark);
-}
-
-.footer-cta .btn-primary:hover {
-  background-color: var(--color-off-white);
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: var(--spacing-sm);
-  border-top: 1px solid rgba(255,255,255,0.2);
-  font-size: var(--font-size-small);
+  border-top: 1px solid var(--color-hairline);
+  font-family: var(--font-family-mono);
+  font-size: 12px;
+  color: var(--color-gray-medium);
 }
 
 /* Gold decorative rule */

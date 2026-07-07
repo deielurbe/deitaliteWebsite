@@ -281,8 +281,9 @@
 
     /* Footer simplified */
     .partner-footer {
-      background-color: var(--color-footer-dark);
-      color: var(--color-white);
+      background-color: transparent;
+      border-top: 1px solid var(--color-hairline);
+      color: var(--color-gray-medium);
       padding: var(--spacing-lg) 0;
       text-align: center;
     }
@@ -290,12 +291,17 @@
     .partner-footer p {
       margin: 0;
       font-size: var(--font-size-small);
-      opacity: 0.8;
+      color: var(--color-gray-medium);
     }
 
     .partner-footer a {
-      color: var(--color-white);
+      color: var(--color-gray-medium);
       text-decoration: underline;
+      transition: color var(--transition-fast);
+    }
+
+    .partner-footer a:hover {
+      color: var(--color-brand-green);
     }
 
     /* Mobile responsive */
