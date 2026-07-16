@@ -38,22 +38,15 @@ document.querySelectorAll('.animate').forEach(el => {
   observer.observe(el);
 });
 
-// 3. Track CTA clicks (for analytics)
+// 3. Track CTA clicks as GoatCounter events
+// Path is keyed by section id (stable across EN/NL/ES); the translated
+// button text goes in the title so clicks aggregate per placement.
 function trackCTAClick(buttonText, section) {
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'cta_click', {
-      'event_category': 'CTA',
-      'event_label': buttonText,
-      'section': section
-    });
-  }
-
-  if (typeof plausible !== 'undefined') {
-    plausible('CTA Click', {
-      props: {
-        button: buttonText,
-        section: section
-      }
+  if (window.goatcounter && window.goatcounter.count) {
+    window.goatcounter.count({
+      path: 'cta/' + section,
+      title: buttonText,
+      event: true
     });
   }
 }
@@ -65,63 +58,13 @@ document.querySelectorAll('.btn-primary').forEach(btn => {
   });
 });
 
-// 4. Scroll depth tracking
-function updateScrollProgress() {
-  const windowHeight = window.innerHeight;
-  const documentHeight = document.documentElement.scrollHeight - windowHeight;
-  const scrolled = window.scrollY;
-  const progress = (scrolled / documentHeight) * 100;
-
-  if (progress > 25 && !window.scrolled25) {
-    window.scrolled25 = true;
-    trackScrollDepth('25%');
-  }
-  if (progress > 50 && !window.scrolled50) {
-    window.scrolled50 = true;
-    trackScrollDepth('50%');
-  }
-  if (progress > 75 && !window.scrolled75) {
-    window.scrolled75 = true;
-    trackScrollDepth('75%');
-  }
-  if (progress > 90 && !window.scrolled90) {
-    window.scrolled90 = true;
-    trackScrollDepth('90%');
-  }
-}
-
-function trackScrollDepth(depth) {
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'scroll_depth', {
-      'event_category': 'Engagement',
-      'event_label': depth
-    });
-  }
-
-  if (typeof plausible !== 'undefined') {
-    plausible('Scroll Depth', {
-      props: { depth: depth }
-    });
-  }
-}
-
-let scrollTimeout;
-window.addEventListener('scroll', () => {
-  if (scrollTimeout) {
-    window.cancelAnimationFrame(scrollTimeout);
-  }
-  scrollTimeout = window.requestAnimationFrame(() => {
-    updateScrollProgress();
-  });
-});
-
-// 5. Email validation helper
+// 4. Email validation helper
 function validateEmail(email) {
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return re.test(email);
 }
 
-// 6. Lazy load images (fallback for browsers without native lazy loading)
+// 5. Lazy load images (fallback for browsers without native lazy loading)
 if ('IntersectionObserver' in window) {
   const imageObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -141,7 +84,7 @@ if ('IntersectionObserver' in window) {
   });
 }
 
-// 7. Demo Tally form embed (language-aware)
+// 6. Demo Tally form embed (language-aware)
 const demoTallyForms = {
   en: 'https://tally.so/embed/zxKQV8?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1',
   nl: 'https://tally.so/embed/NpABGb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1',
@@ -164,7 +107,7 @@ window.addEventListener('languageChanged', function(e) {
   updateDemoTallyForm(e.detail.lang);
 });
 
-// 8. WhatsApp button: hidden until user scrolls (avoids covering hero text on mobile)
+// 7. WhatsApp button: hidden until user scrolls (avoids covering hero text on mobile)
 (function() {
   const wa = document.querySelector('.whatsapp-float');
   if (!wa) return;
@@ -176,7 +119,7 @@ window.addEventListener('languageChanged', function(e) {
   window.addEventListener('scroll', showWhatsApp, { passive: true });
 })();
 
-// 9. FAQ Accordion with ARIA support
+// 8. FAQ Accordion with ARIA support
 document.querySelectorAll('.faq-question').forEach(button => {
   button.addEventListener('click', () => {
     const faqItem = button.parentElement;
