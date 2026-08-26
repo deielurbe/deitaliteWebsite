@@ -164,7 +164,7 @@ const translations = {
     'cta.contact': 'info@deita.eu',
 
     // Footer
-    'footer.tagline': 'deitalite is built by <a href="https://deita.eu" target="_blank" rel="noopener">deita</a> — the practice of Dei Martinez Elurbe.',
+    'footer.tagline': 'deitalite is built by <a href="https://deita.eu" target="_blank" rel="noopener">deita</a> — the practice of Dei M. Elurbe.',
     'footer.links': 'Links',
     'footer.how': 'How it works',
     'footer.pricing': 'Pricing',
@@ -339,7 +339,7 @@ const translations = {
     'cta.contact': 'info@deita.eu',
 
     // Footer
-    'footer.tagline': 'deitalite is gemaakt door <a href="https://deita.eu" target="_blank" rel="noopener">deita</a> — de praktijk van Dei Martinez Elurbe.',
+    'footer.tagline': 'deitalite is gemaakt door <a href="https://deita.eu" target="_blank" rel="noopener">deita</a> — de praktijk van Dei M. Elurbe.',
     'footer.links': 'Links',
     'footer.how': 'Hoe het werkt',
     'footer.pricing': 'Prijzen',
@@ -514,7 +514,7 @@ const translations = {
     'cta.contact': 'info@deita.eu',
 
     // Footer
-    'footer.tagline': 'deitalite está hecho por <a href="https://deita.eu" target="_blank" rel="noopener">deita</a> — el estudio de Dei Martinez Elurbe.',
+    'footer.tagline': 'deitalite está hecho por <a href="https://deita.eu" target="_blank" rel="noopener">deita</a> — el estudio de Dei M. Elurbe.',
     'footer.links': 'Enlaces',
     'footer.how': 'Cómo funciona',
     'footer.pricing': 'Precios',
